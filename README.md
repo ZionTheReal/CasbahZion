@@ -1,10 +1,10 @@
-# Casbah: Amnesia Pre-Alpha, Once Again
-Here is everything you need to compile Casbah, a playable recreation of early pre-alpha videos from 2008-2009 that were recorded years prior to Amnesia: The Dark Descent's final release
+# Casbah: Zion's Fork
+Decided to help out with Casbah :v
 
 # Disclaimer
 Please note that this project is not completely accurate to the original source material; the game files are also not free and open to redistribute but can be safely reused for mods, as those are lax on using copyrighted assets. However, you can share and do anything you want with the source code of Casbah as long as it stays under the GPLv3 license (see the `LICENSE` file for more details)
 
-Other than that, build and installation instructions are below this text. Good luck and have fun :-)
+Other than that, build and installation instructions are below this text. Good luck and have fun :)
 
 # Instructions
 ## Building
