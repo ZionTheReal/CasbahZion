@@ -1,0 +1,54 @@
+<Entity>
+    <EditorSession>
+        <ViewportConfig GridSnap="false" GridSnapSeparation="0.250000" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="0.000000 0.000000 20.000000" CameraTarget="0.000000 0.000000 0.000000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="2" Preset="0" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="20.000000 0.000000 0.000000" CameraTarget="0.000000 0.000000 0.000000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="0" Preset="1" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="0.000000 20.000000 0.000000" CameraTarget="0.000000 0.000000 0.000000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="1" Preset="2" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="0.137390 0.346741 0.784759" CameraTarget="-0.026007 0.049318 0.000462" CameraZoom="4.069186" GridHeight="0.000000" GridPlane="1" Preset="3" RenderMode="0" ShowGrid="true" />
+        </ViewportConfig>
+    </EditorSession>
+    <UserDefinedVariables EntitySubType="Puzzle" EntityType="Item">
+        <Var Name="Health" Value="100" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MaxFocusDistance" Value="2" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="SubItemTypeName" Value="flask01_cuprite" />
+        <Var Name="ImageFile" Value="flask01_cuprite" />
+        <Var Name="PickSound" Value="Glass" />
+        <Var Name="TempVar" Value="0" />
+    </UserDefinedVariables>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="C:/SVN/lux/redist/entities/bottle/flask01/flask01_cuprite.dae">
+            <SubMesh Active="true" GroupID="0" ID="5" Name="Flask01" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.105501 0.188773 0.105501" RelativeTranslation="0.000000 -0.051228 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.105501 0.188773 0.105501" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="9" WorldPos="0.000869 0.101761 0.001447" />
+            <BodyShape Active="true" GroupID="0" ID="2" Name="BodyShape_1_clone_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.055826 0.117816 0.055826" RelativeTranslation="0.000000 0.086707 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.055826 0.117816 0.055826" ShapeType="Cylinder" ShapeTypeID="1" Tag="" Type="9" WorldPos="0.000869 0.239696 0.001447" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.100000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="false" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" ID="3" LinearDamping="0.100000" Mass="2.000000" Material="Glass" MaxAngularSpeed="20.000000" MaxLinearSpeed="20.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000869 0.152989 0.001447">
+                <Shape ID="2" />
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="5" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+</Entity>
