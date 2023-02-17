@@ -165,7 +165,9 @@ tWString cLuxProp_LevelDoor::GetFocusText()
 {
 	tWString sStr =	kTranslate("Levels", msTextEntry) + _W("\n");
 
-	/*if(mbShowStats)
+	//ZION: Everything below was marked off. Must be the code that makes level doors show the completion percentage when hovered over together with the level's name above.
+
+	if(mbShowStats)
 	{
 		int lPercent=0;
 		tString sMapName = gpBase->mpMapHandler->FileToMapName(msMapFile);
@@ -177,7 +179,7 @@ tWString cLuxProp_LevelDoor::GetFocusText()
 		}
 		
 		sStr += cString::ToStringW(lPercent)+_W("% ")+kTranslate("CompletionCount", "Completed");
-	}*/
+	}
 	
 	return sStr;
 }

@@ -83,7 +83,7 @@ void cLuxPlayerState_Ladder::OnEnterState(eLuxPlayerState aPrevState)
 	pCharBody->ResetClimbing();
 
     cLuxMoveState_Normal *pMoveState = static_cast<cLuxMoveState_Normal*>(mpPlayer->GetMoveStateData(eLuxMoveState_Normal));
-	pMoveState->SetCrouch(false);
+	//pMoveState->SetCrouch(false); //ZION: Should restore crouching on ladders.
 	pMoveState->ResetJumping();
 
 	/////////////////////////////////////

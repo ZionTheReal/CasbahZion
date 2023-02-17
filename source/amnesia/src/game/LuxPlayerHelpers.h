@@ -342,6 +342,8 @@ private:
 	float mfCheckEnemySeenCount;
 
 	bool mbSanityEffectUpdated;
+	bool mbSanityAfterEffectUpdated;
+	bool mbSanityEndEffectUpdated;
 
 	float mfT;
 	float mfInsaneWaveAlpha;

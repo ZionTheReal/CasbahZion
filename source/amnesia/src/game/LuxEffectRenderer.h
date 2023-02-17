@@ -51,7 +51,7 @@ public:
 	void RenderSolid(cRendererCallbackFunctions* apFunctions);
 	void RenderTrans(cRendererCallbackFunctions* apFunctions);
 
-	void AddOutlineObject(iRenderable *apObject);
+	void AddOutlineObjects(iRenderable *apObject);
 	void ClearOutlineObjects();
 
 	void AddFlashObject(iRenderable *apObject, float afAlpha);

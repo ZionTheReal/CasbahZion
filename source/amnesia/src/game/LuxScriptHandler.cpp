@@ -1743,9 +1743,11 @@ void __stdcall cLuxScriptHandler::AddQuest(string& asName, string& asNameAndText
 		
 		gpBase->mpMessageHandler->StarQuestAddedMessage();
 		
-		//tWString sMess = kTranslate("Quest", "QuestAdded") + _W("\n") + kTranslate("Journal", sTextEntry);
-		//gpBase->mpMessageHandler->SetMessage(sMess, 0);	
-		//gpBase->mpHelpFuncs->PlayGuiSoundData("quest_added", eSoundEntryType_Gui);
+		//ZION: Below must be the code that makes the QUEST ADDED message appear.
+		
+		tWString sMess = kTranslate("Quest", "QuestAdded") + _W("\n") + kTranslate("Journal", sTextEntry);
+		gpBase->mpMessageHandler->SetMessage(sMess, 0);	
+		gpBase->mpHelpFuncs->PlayGuiSoundData("quest_added", eSoundEntryType_Gui);
 	}
 }
 
@@ -1760,9 +1762,11 @@ void __stdcall cLuxScriptHandler::CompleteQuest(string& asName, string& asNameAn
 	{
 		gpBase->mpProgressLogHandler->AddLog(eLuxProgressLogLevel_High, "Completed Quest "+ asName);
 
-		//tWString sMess = kTranslate("Quest", "QuestCompleted") + _W("\n") + kTranslate("Journal", sTextEntry);
-		//gpBase->mpMessageHandler->SetMessage(sMess, 0);
-		//gpBase->mpHelpFuncs->PlayGuiSoundData("quest_completed", eSoundEntryType_Gui);
+		//ZION: Below must be the code that makes the QUEST COMPLETED message appear.
+
+		tWString sMess = kTranslate("Quest", "QuestCompleted") + _W("\n") + kTranslate("Journal", sTextEntry);
+		gpBase->mpMessageHandler->SetMessage(sMess, 0);
+		gpBase->mpHelpFuncs->PlayGuiSoundData("quest_completed", eSoundEntryType_Gui);
 		
 		cLuxMap *pMap = gpBase->mpMapHandler->GetCurrentMap();
 		if(pMap) pMap->AddCompletionAmount(gpBase->mpCompletionCountHandler->mlQuestCompletionValue, 6.0f);

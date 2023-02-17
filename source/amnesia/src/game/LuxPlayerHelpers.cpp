@@ -1192,6 +1192,8 @@ void cLuxPlayerSanity::Reset()
 	mbEnemyIsSeen = false;
 
 	mbSanityEffectUpdated = false;
+	mbSanityAfterEffectUpdated = false;
+	mbSanityEndEffectUpdated = false;
 
 	mfAtLowSanityCount =0;
 
@@ -1300,7 +1302,11 @@ void cLuxPlayerSanity::UpdateInsanityVisuals(float afTimeStep)
 void cLuxPlayerSanity::UpdateInsaneEffects(float afTimeStep)
 {
 	if(mbHitIsUpdated) return;
+	
+	float fEffectCountdown = 3;
+	float fEffectCountdownTarget = 0;
 
+	// Reset the visual effects back to normal.
 	if(mbSanityEffectUpdated)
 	{
 		gpBase->mpEffectHandler->GetImageTrail()->FadeTo(0, 1);
@@ -1308,6 +1314,34 @@ void cLuxPlayerSanity::UpdateInsaneEffects(float afTimeStep)
 		mpPlayer->FadeFOVMulTo(1, 1);
 
 		mbSanityEffectUpdated = false;
+		mbSanityAfterEffectUpdated = true;
+	}
+	
+	// It applies an instant image trail after the effects above are done, somehow.
+	if(mbSanityAfterEffectUpdated)
+	{
+		//gpBase->mpEffectHandler->GetImageTrail()->FadeTo(2, 1);
+		gpBase->mpHelpFuncs->PlayGuiSoundData("sanity_heartbeat", eSoundEntryType_Gui);
+		
+		//float delta = fEffectCountdownTarget - fEffectCountdown;
+		//delta *= 2;
+		
+		//fEffectCountdown += delta;
+
+		mbSanityAfterEffectUpdated = false;
+		if(fEffectCountdown == 0)
+		{
+			mbSanityEndEffectUpdated = true;
+		}
+	}
+	
+	// Theorically, this should be applied 3 seconds after the script above. Disables the image trail.
+	if(mbSanityEndEffectUpdated)
+	{
+		gpBase->mpEffectHandler->GetImageTrail()->FadeTo(0, 1);
+		gpBase->mpHelpFuncs->PlayGuiSoundData("quest_completed", eSoundEntryType_Gui); // For testing.
+
+		mbSanityEndEffectUpdated = false;
 	}
 
 	////////////////////////////////
@@ -1450,7 +1484,7 @@ void cLuxPlayerSanity::UpdateCheckEnemySeen(float afTimeStep)
 	{
       	mpPlayer->LowerSanity(mfNearEnemyDecrease, true);
 		
-		//do this in update instead!
+		//do this in update instead! ZION: Image trail?
 		//gpBase->mpEffectHandler->GetRadialBlur()->SetBlurStartDist(0.3f);
 		//gpBase->mpEffectHandler->GetRadialBlur()->FadeTo(0.12f, 0.12f / 3.0f);
 
@@ -1492,7 +1526,7 @@ void cLuxPlayerSanity::UpdateHit(float afTimeStep)
 		if(mfHitAlpha < 0) mfHitAlpha =0;
 	}
 
-	gpBase->mpEffectHandler->GetImageTrail()->FadeTo(mfHitAlpha * 0.9f, 100);
+	gpBase->mpEffectHandler->GetImageTrail()->FadeTo(mfHitAlpha * 2.0f, 5); //ZION: Image trail effect.
 	mpPlayer->FadeAspectMulTo(1 - mfHitAlpha * mfHitZoomInAspectMul, 100);
 	mpPlayer->FadeFOVMulTo(1 - mfHitAlpha * mfHitZoomInFOVMul, 100);
 
@@ -2915,16 +2949,16 @@ void cLuxPlayerInDarkness::Update(float afTimeStep)
 	// Light
     if(fExtLightLevel > mfMinDarknessLightLevel)
 	{
-		////////////////////////////
+		////////////////////////////ZION: Restored the darkness sound.
 		//Turn off loop sound
-		/*if(mpLoopSound)
+		if(mpLoopSound)
 		{
 			if(mfLoopSoundCount <= 0)
 			{
 				mpLoopSound->FadeOut(mfLoopSoundFadeOutSpeed);
 				mpLoopSound = NULL;
 			}
-		}*/
+		}
         
 		mfLoopSoundCount-= afTimeStep;
 		if(mfLoopSoundCount <= 0) mfLoopSoundCount = 0;
@@ -2960,16 +2994,16 @@ void cLuxPlayerInDarkness::Update(float afTimeStep)
 			}
 		}
 				
-		////////////////////////////
+		////////////////////////////ZION: Restored darkness sound.
 		//Check if sound should be played
-		/*if(mpLoopSound == NULL)
+		if(mpLoopSound == NULL)
 		{
 			if(mfLoopSoundCount >= mfLoopSoundStartupTime)
 			{
 				mpLoopSound = mpSoundHandler->PlayGuiStream(msLoopSoundFile,true,mfLoopSoundVolume);
 				if(mpLoopSound) mpLoopSound->FadeIn(1.0f, mfLoopSoundFadeInSpeed);
 			}
-		}*/
+		}
 
 		mfLoopSoundCount+= afTimeStep;
 		if(mfLoopSoundCount >= mfLoopSoundStartupTime) mfLoopSoundCount = mfLoopSoundStartupTime;

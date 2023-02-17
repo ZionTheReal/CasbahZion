@@ -80,7 +80,7 @@ void cLuxCompletionCountHandler::Reset()
 
 void cLuxCompletionCountHandler::Update(float afTimeStep)
 {
-	return;
+	//return; //ZION: The entire mechanic was restored by disabling these return functions.
 
 	/////////////////////
 	//Decrease alpha
@@ -108,7 +108,7 @@ void cLuxCompletionCountHandler::Update(float afTimeStep)
 	{
 		if(mfDisplayedAmount < mfNewAmount)
 		{
-			float fDistance = 0;//(mfNewAmount - mfDisplayedAmount);
+			float fDistance = 0;(mfNewAmount - mfDisplayedAmount); //ZION: (mfNewAmount - mfDisplayedAmount); Previously disabled.
 			mfDisplayedAmount += (fDistance+0.001f) * 30 * afTimeStep;
 			if(mfDisplayedAmount > mfNewAmount)mfDisplayedAmount = mfNewAmount;
 		}
@@ -127,7 +127,7 @@ void cLuxCompletionCountHandler::Update(float afTimeStep)
 
 void cLuxCompletionCountHandler::OnDraw(float afFrameTime)
 {
-	return;
+	//return;
 	
 	float fPrecent = mfDisplayedAmount * 100;
 	gpBase->mpGameHudSet->DrawFont(mpFont, cVector3f(400,20,1),21,cColor(1,mfAlpha), eFontAlign_Right,eGuiMaterial_FontNormal,
@@ -148,7 +148,7 @@ void cLuxCompletionCountHandler::OnMapExit(cLuxMap *apMap)
 
 void cLuxCompletionCountHandler::ShowCompletionIncrease(float afPrevius, float afNew, float afDelay)
 {
-	return;
+	//return;
 
 	if(afPrevius == afNew) return;
 

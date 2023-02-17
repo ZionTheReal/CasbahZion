@@ -188,7 +188,7 @@ void cLuxEffectRenderer::RenderTrans(cRendererCallbackFunctions* apFunctions)
 
 //-----------------------------------------------------------------------
 
-void cLuxEffectRenderer::AddOutlineObject(iRenderable *apObject)
+void cLuxEffectRenderer::AddOutlineObjects(iRenderable *apObject)
 {
 	mvOutlineObjects.push_back(apObject);
 }
@@ -479,8 +479,8 @@ void cLuxEffectRenderer::RenderOutline(cRendererCallbackFunctions* apFunctions)
 
 	apFunctions->SetTexture(0, mpBlurTexture[1]);	
 	apFunctions->DrawQuad(0,1,0,mpBlurTexture[1]->GetSizeFloat2D(),true);
-	//apFunctions->SetTexture(0, mpOutlineColorTexture);	
-	//apFunctions->DrawQuad(0,1,0,mpOutlineColorTexture->GetSizeFloat2D(),true);
+	//apFunctions->SetTexture(0, mpOutlineColorTexture);	//ZION: Could be part of the blue outline?
+	//apFunctions->DrawQuad(0,1,0,mpOutlineColorTexture->GetSizeFloat2D(),true);	//ZION: Could be part of the blue outline?
 	
 	////////////////////////////////////
 	// Reset 

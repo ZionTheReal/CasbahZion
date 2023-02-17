@@ -1106,11 +1106,13 @@ void cLuxMap::AddCompletionAmount(int alAmount, float afDelay)
 
 	gpBase->mpCompletionCountHandler->ShowCompletionIncrease(fPrevious, fNew, afDelay);
 
-	//float fPercent = (float)mlCurrentCompletionAmount/(float)mlTotalCompletionAmount;
-	//gpBase->mpDebugHandler->AddMessage(_W("Completion value: ")+cString::ToStringW(mlCurrentCompletionAmount) + _W(" / ")+
-	//															cString::ToStringW(mlTotalCompletionAmount) + _W(" Percent: ")+
-	//															cString::ToStringW(fPercent),
-	//															false);
+	//ZION: The text below was previously marked off. Turning this back on for testing.
+
+	/*float fPercent = (float)mlCurrentCompletionAmount/(float)mlTotalCompletionAmount;
+	gpBase->mpDebugHandler->AddMessage(_W("Completion value: ")+cString::ToStringW(mlCurrentCompletionAmount) + _W(" / ")+
+																cString::ToStringW(mlTotalCompletionAmount) + _W(" Percent: ")+
+																cString::ToStringW(fPercent),
+																false);*/
 }
 
 //-----------------------------------------------------------------------

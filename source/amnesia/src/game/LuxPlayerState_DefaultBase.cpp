@@ -228,7 +228,15 @@ bool iLuxPlayerState_DefaultBase::ShowOutlineOnEntity(iLuxEntity *apEntity, iPhy
 
 	iLuxProp *pProp = static_cast<iLuxProp*>(apEntity);
 
-	return pProp->GetPropType()==eLuxPropType_Item && apEntity->CanInteract(apBody) && apEntity->GetInteractionDisabled()==false;
+	//return pProp->GetPropType()==eLuxPropType_Object && apEntity->CanInteract(apBody) && apEntity->GetInteractionDisabled()==false;
+	if(pProp->GetPropType()==eLuxPropType_Object && apEntity->CanInteract(apBody) && apEntity->GetInteractionDisabled())
+	{
+		return false;
+	}
+	else if(pProp->GetPropType()==eLuxPropType_Item && apEntity->CanInteract(apBody) && apEntity->GetInteractionDisabled())
+	{
+		return false;
+	}
 }
 
 //-----------------------------------------------------------------------
@@ -286,7 +294,7 @@ void iLuxPlayerState_DefaultBase::AddOutlineObjects(iPhysicsBody *apBody, iLuxEn
 	        
 			if(BodyIsAdded(static_cast<iPhysicsBody*>(pSubEnt->GetEntityParent()), lstAttachedBodies))
 			{
-				gpBase->mpEffectRenderer->AddOutlineObject(pSubEnt);
+				gpBase->mpEffectRenderer->AddOutlineObjects(pSubEnt);
 			}
 		}
 	}
@@ -301,7 +309,7 @@ void iLuxPlayerState_DefaultBase::AddOutlineObjects(iPhysicsBody *apBody, iLuxEn
 
 			if(static_cast<iPhysicsBody*>(pSubEnt->GetEntityParent()) == apBody)
 			{
-				gpBase->mpEffectRenderer->AddOutlineObject(pSubEnt);
+				gpBase->mpEffectRenderer->AddOutlineObjects(pSubEnt);
 			}
 		}
 	}
