@@ -1,0 +1,69 @@
+<Entity>
+    <EditorSession>
+        <ViewportConfig GridSnap="false" GridSnapSeparation="0.250000" SelectedViewport="0" UsingEnlargedViewport="false">
+            <Viewport CameraPosition="0.000000 0.000000 20.000000" CameraTarget="0.000000 0.000000 0.000000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="2" Preset="0" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="20.000000 0.185000 -0.040000" CameraTarget="0.000000 0.185000 -0.040000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="0" Preset="1" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="0.000000 20.000000 0.000000" CameraTarget="0.000000 0.000000 0.000000" CameraZoom="0.916291" GridHeight="0.000000" GridPlane="1" Preset="2" RenderMode="1" ShowGrid="true" />
+            <Viewport CameraPosition="0.330520 0.698465 0.271061" CameraTarget="-0.060364 0.092347 -0.089740" CameraZoom="4.127148" GridHeight="0.000000" GridPlane="1" Preset="3" RenderMode="0" ShowGrid="true" />
+        </ViewportConfig>
+    </EditorSession>
+    <UserDefinedVariables EntitySubType="Grab" EntityType="Object">
+        <Var Name="Health" Value="40" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="MaxFocusDistance" Value="0" />
+        <Var Name="MainPhysicsBody" Value="" />
+        <Var Name="DissolveOnDestruction" Value="false" />
+        <Var Name="DissolveTime" Value="1.0" />
+        <Var Name="EffectsOnSound" Value="" />
+        <Var Name="EffectsOffSound" Value="" />
+        <Var Name="EffectsOnTime" Value="1" />
+        <Var Name="EffectsOffTime" Value="1" />
+        <Var Name="EffectsOffLightColor" Value="0 0 0 0" />
+        <Var Name="EffectsOffLightRadius" Value="-1" />
+        <Var Name="StaticMoveCheckCollision" Value="false" />
+        <Var Name="StaticMoveStartSound" Value="" />
+        <Var Name="StaticMoveStopSound" Value="" />
+        <Var Name="StaticMoveLoopSound" Value="" />
+        <Var Name="RandomizeAnimationStart" Value="true" />
+        <Var Name="BreakActive" Value="true" />
+        <Var Name="BreakDestroyJoints" Value="false" />
+        <Var Name="BreakMinEnergy" Value="40" />
+        <Var Name="BreakEntity" Value="vase02_broken.ent" />
+        <Var Name="BreakEntityAlignBody" Value="" />
+        <Var Name="BreakSound" Value="break_pottery" />
+        <Var Name="BreakParticleSystem" Value="ps_ghost_release" />
+        <Var Name="BreakImpulse" Value="3" />
+        <Var Name="HitDamageAmount" Value="5" />
+        <Var Name="HitDamageStrength" Value="1" />
+        <Var Name="MinHitDamageSpeed" Value="3" />
+        <Var Name="LifeLength" Value="0" />
+        <Var Name="IsFood" Value="false" />
+        <Var Name="GrabUseDepth" Value="false" />
+        <Var Name="GrabDepth" Value="2" />
+        <Var Name="GrabDepthInc" Value="0.15" />
+        <Var Name="GrabMinDepth" Value="1.0" />
+        <Var Name="GrabMaxDepth" Value="2.2" />
+        <Var Name="GrabUseOffset" Value="false" />
+        <Var Name="GrabThrowImpulse" Value="10" />
+        <Var Name="GrabMassMul" Value="0.1" />
+    </UserDefinedVariables>
+    <ModelData Name="">
+        <Entities />
+        <Mesh Filename="entities/container/vase02/vase02.dae">
+            <SubMesh Active="true" GroupID="0" ID="0" Name="polySurface17" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" SubMeshID="0" Tag="" Type="12" WorldPos="0.000000 0.000000 0.000000" />
+        </Mesh>
+        <Bones />
+        <Shapes>
+            <BodyShape Active="true" GroupID="0" ID="1" Name="BodyShape_1" RelativeRotation="0.000000 0.000000 0.000000" RelativeScale="0.250000 0.500000 0.250000" RelativeTranslation="0.000000 -0.000000 0.000000" Rotation="0.000000 0.000000 0.000000" Scale="0.250000 0.500000 0.250000" ShapeType="Box" ShapeTypeID="0" Tag="" Type="9" WorldPos="0.000000 0.250164 0.000000" />
+        </Shapes>
+        <Bodies>
+            <Body Active="true" AngularDamping="0.000000" BlocksSound="false" CanAttachCharacter="false" CollideCharacter="true" CollideNonCharacter="true" ContinuousCollision="false" GroupID="0" ID="2" LinearDamping="0.000000" Mass="8.000000" Material="Rock" MaxAngularSpeed="0.000000" MaxLinearSpeed="0.000000" Name="Body_1" PushedByCharacterGravity="false" Rotation="0.000000 0.000000 0.000000" Scale="1.000000 1.000000 1.000000" Tag="" Type="10" UseSurfaceEffects="true" Volatile="false" WorldPos="0.000000 0.250164 0.000000">
+                <Shape ID="1" />
+                <Children>
+                    <Child ID="0" />
+                </Children>
+            </Body>
+        </Bodies>
+        <Joints />
+    </ModelData>
+</Entity>
