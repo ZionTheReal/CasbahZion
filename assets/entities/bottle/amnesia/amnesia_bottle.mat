@@ -1,0 +1,19 @@
+<Material>
+    <Main BlendMode="Mul" DepthTest="true" PhysicsMaterial="Default" Type="translucent" UseAlpha="false" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="0" AnimMode="None" Compress="true" File="G:/amnesia/redist/entities/bottle/amnesia/amnesia_bottle.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="0" AnimMode="None" Compress="true" File="G:/amnesia/redist/entities/bottle/amnesia/amnesia_bottle_nrm.dds" MipMaps="true" Type="2D" Wrap="Repeat" />
+        <CubeMap AnimFrameTime="0" AnimMode="None" Compress="true" File="G:/amnesia/redist/textures/envmaps/water_castleb_nowin_cubemap.dds" MipMaps="true" Type="Cube" Wrap="Repeat" />
+    </TextureUnits>
+    <SpecificVariables>
+        <Var Name="Refraction" Value="false" />
+        <Var Name="RefractionEdgeCheck" Value="true" />
+        <Var Name="RefractionNormals" Value="false" />
+        <Var Name="RefractionScale" Value="0.10000000149011612" />
+        <Var Name="FrenselBias" Value="0.30000001192092896" />
+        <Var Name="FrenselPow" Value="0.5" />
+        <Var Name="RimLightMul" Value="1" />
+        <Var Name="RimLightPow" Value="8" />
+        <Var Name="AffectedByLightLevel" Value="true" />
+    </SpecificVariables>
+</Material>
