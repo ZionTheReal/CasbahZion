@@ -1,0 +1,198 @@
+<Entity>
+    <EditorSession>
+        <Performance CamClipPlanes="0.05 1000" LightsActive="true" PSActive="true" ShowFog="true" ShowSkybox="true" WorldReflection="true" />
+        <ViewportConfig BGColor="0.2 0.2 0.2 1" GAmbientLight="true" GPointLight="true" GridSnap="false" GridSnapSeparation="0.25" SelectedViewport="3" UsingEnlargedViewport="true">
+            <Viewport CameraPosition="0 0 180" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="2" Preset="0" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="180 0 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="0" Preset="1" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="0 180 0" CameraTarget="0 0 0" CameraZoom="0" GridHeight="0" GridPlane="1" Preset="2" RenderMode="1" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+            <Viewport CameraPosition="-0.0580946 0.80871 -1.22193" CameraTarget="0.0293186 0.0409886 0.146244" CameraZoom="3.46013" GridHeight="0" GridPlane="1" Preset="3" RenderMode="0" ShowAxes="true" ShowGrid="true" UsingLTCam="false" />
+        </ViewportConfig>
+    </EditorSession>
+    <ModelData>
+        <Entities />
+        <Mesh Filename="entities/enemy/spider/nec_spider_base.dae">
+            <SubMesh Active="true" ID="0" Material="" Name="pSphere2" Rotation="0 0 0" Scale="1 1 1" SubMeshID="0" Tag="" WorldPos="0 0 0" />
+        </Mesh>
+        <Bones>
+            <Bone ID="1" Name="group" />
+            <Bone ID="2" Name="pSphere2" />
+            <Bone ID="3" Name="joint1" />
+            <Bone ID="4" Name="joint2" />
+            <Bone ID="5" Name="joint3" />
+            <Bone ID="6" Name="joint4" />
+            <Bone ID="7" Name="joint5" />
+            <Bone ID="8" Name="joint5_joint6" />
+            <Bone ID="9" Name="joint5_joint6_joint7" />
+            <Bone ID="10" Name="joint5_joint6_joint7_joint8" />
+            <Bone ID="11" Name="joint9" />
+            <Bone ID="12" Name="joint9_joint10" />
+            <Bone ID="13" Name="joint9_joint10_joint11" />
+            <Bone ID="14" Name="joint9_joint10_joint11_joint12" />
+            <Bone ID="15" Name="joint30" />
+            <Bone ID="16" Name="joint30_joint10" />
+            <Bone ID="17" Name="joint30_joint10_joint11" />
+            <Bone ID="18" Name="joint30_joint10_joint11_joint12" />
+            <Bone ID="19" Name="joint35" />
+            <Bone ID="20" Name="joint35_joint6" />
+            <Bone ID="21" Name="joint35_joint6_joint7" />
+            <Bone ID="22" Name="joint35_joint6_joint7_joint8" />
+            <Bone ID="23" Name="joint17" />
+            <Bone ID="24" Name="joint17_joint18" />
+            <Bone ID="25" Name="joint17_joint18_joint19" />
+            <Bone ID="26" Name="joint17_joint18_joint19_joint20" />
+            <Bone ID="27" Name="joint13" />
+            <Bone ID="28" Name="joint13_joint14" />
+            <Bone ID="29" Name="joint13_joint14_joint15" />
+            <Bone ID="30" Name="joint13_joint14_joint15_joint16" />
+            <Bone ID="31" Name="joint25" />
+            <Bone ID="32" Name="joint25_joint14" />
+            <Bone ID="33" Name="joint25_joint14_joint15" />
+            <Bone ID="34" Name="joint25_joint14_joint15_joint16" />
+            <Bone ID="35" Name="joint40" />
+            <Bone ID="36" Name="joint40_joint18" />
+            <Bone ID="37" Name="joint40_joint18_joint19" />
+            <Bone ID="38" Name="joint40_joint18_joint19_joint20" />
+        </Bones>
+        <Shapes />
+        <Bodies />
+        <Joints />
+        <Animations>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_idle.dae_anim" Name="Idle" SpecialEventTime="2.88932e-032" Speed="1" />
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_walk.dae_anim" Name="Walk" SpecialEventTime="3.86262e-032" Speed="1.1">
+                <Event Time="0.05" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="0.7" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="1.6" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="2.3" Type="PlaySound" Value="nec_spider_step.snt" />
+            </Animation>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_walk.dae_anim" Name="Run" SpecialEventTime="3.86262e-032" Speed="1">
+                <Event Time="0.1" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="0.8" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="1.7" Type="PlaySound" Value="nec_spider_step.snt" />
+                <Event Time="2.4" Type="PlaySound" Value="nec_spider_step.snt" />
+            </Animation>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_attack.dae_anim" Name="SwingClaws01" SpecialEventTime="3.87826e-032" Speed="1.1">
+                <Event Time="0.4" Type="PlaySound" Value="spider_attack.snt" />
+            </Animation>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_attack.dae_anim" Name="SwingClaws02" SpecialEventTime="3.8913e-032" Speed="1">
+                <Event Time="0.4" Type="PlaySound" Value="spider_attack.snt" />
+            </Animation>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_attack.dae_anim" Name="BreakDoor" SpecialEventTime="3.87937e-032" Speed="1" />
+            <Animation File="necr_spider_attack.dae_anim" Name="SwingLaunch" SpecialEventTime="3.8913e-032" Speed="1.2">
+                <Event Time="0.3" Type="Step" Value="" />
+                <Event Time="0.2" Type="PlaySound" Value="spider_attack.snt" />
+                <Event Time="1.1" Type="Step" Value="" />
+            </Animation>
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_death.dae_anim" Name="Dead" SpecialEventTime="3.88758e-032" Speed="1">
+                <Event Time="0.05" Type="PlaySound" Value="spider_die.snt" />
+            </Animation>
+            <Animation File="necr_spider_idle.dae_anim" Name="Notice1" SpecialEventTime="3.8913e-032" Speed="1" />
+            <Animation File="necr_spider_poison.dae_anim" Name="Notice2" SpecialEventTime="3.87873e-032" Speed="1" />
+            <Animation File="D:/Games/Steam/steamapps/common/Amnesia The Dark Descent/entities/necr_spider/Animation/necr_spider_poison.dae_anim" Name="Flinch" SpecialEventTime="1.11221e-031" Speed="1">
+                <Event Time="0.08" Type="PlaySound" Value="spider_hurt.snt" />
+            </Animation>
+        </Animations>
+    </ModelData>
+    <UserDefinedVariables EntitySubType="" EntityType="Enemy_Grunt">
+        <Var Name="Health" Value="5" />
+        <Var Name="Toughness" Value="0" />
+        <Var Name="AutoRemoveAtPathEnd" Value="false" />
+        <Var Name="SightRange" Value="6" />
+        <Var Name="DarknessSightRange" Value="15" />
+        <Var Name="HearVolume" Value="0.3" />
+        <Var Name="FOV" Value="230" />
+        <Var Name="FOVXMul" Value="1" />
+        <Var Name="ActivationDistance" Value="900" />
+        <Var Name="MaxRegenHealth" Value="3" />
+        <Var Name="RegenHealthSpeed" Value="1" />
+        <Var Name="DangerMusic" Value="dan_spider" />
+        <Var Name="DangerMusicPrio" Value="1" />
+        <Var Name="SearchMusic" Value="" />
+        <Var Name="SearchMusicPrio" Value="1" />
+        <Var Name="AttackMusic" Value="att_spider" />
+        <Var Name="AttackMusicPrio" Value="1" />
+        <Var Name="PlayerSearchMaxAngle" Value="45" />
+        <Var Name="PlayerSearchMinDistMul" Value="5" />
+        <Var Name="PlayerSearchMaxDistMul" Value="10" />
+        <Var Name="PlayerSearchTime" Value="600" />
+        <Var Name="PlayerPatrolMaxAngle" Value="110" />
+        <Var Name="PlayerPatrolMinDist" Value="3.5" />
+        <Var Name="PlayerPatrolMaxDist" Value="15" />
+        <Var Name="Body_Size" Value="1 1 1" />
+        <Var Name="Body_Mass" Value="50" />
+        <Var Name="Body_AccurateClimbing" Value="true" />
+        <Var Name="Body_MaxNoSlideSlopeAngle" Value="45" />
+        <Var Name="Body_MaxPushMass" Value="20" />
+        <Var Name="Body_PushForce" Value="20" />
+        <Var Name="Body_CharacterMaxPushMass" Value="20" />
+        <Var Name="Body_CharacterPushForce" Value="100" />
+        <Var Name="Body_MaxStepSize" Value="0.5" />
+        <Var Name="Body_StepClimbSpeed" Value="6.0" />
+        <Var Name="Body_OffsetRot" Value="0 0 0" />
+        <Var Name="Body_OffsetTrans" Value="0 0.116 0" />
+        <Var Name="Walk_ForwardSpeed" Value="2.5" />
+        <Var Name="Walk_BackwardSpeed" Value="1.5" />
+        <Var Name="Walk_ForwardAcc" Value="11" />
+        <Var Name="Walk_ForwardDeacc" Value="12" />
+        <Var Name="Run_ForwardSpeed" Value="5.4" />
+        <Var Name="Run_BackwardSpeed" Value="2.2" />
+        <Var Name="Run_ForwardAcc" Value="4.5" />
+        <Var Name="Run_ForwardDeacc" Value="8.3" />
+        <Var Name="TurnSpeedMul" Value="6" />
+        <Var Name="TurnMaxSpeed" Value="4" />
+        <Var Name="TurnMinBreakAngle" Value="25" />
+        <Var Name="TurnBreakMul" Value="1.5" />
+        <Var Name="MoveSpeedAnimMul" Value="1.35" />
+        <Var Name="StoppedToWalkSpeed" Value="0.05" />
+        <Var Name="WalkToStoppedSpeed" Value="0.02" />
+        <Var Name="WalkToRunSpeed" Value="2.5" />
+        <Var Name="RunToWalkSpeed" Value="2.2" />
+        <Var Name="WaterStepSpeedWalk" Value="3.0" />
+        <Var Name="WaterStepSpeedRun" Value="5.0" />
+        <Var Name="WaterStepSpeedMisc" Value="3.0" />
+        <Var Name="HitPS_Sword" Value="" />
+        <Var Name="HitSound_Sword" Value="" />
+        <Var Name="HitPS_Club" Value="" />
+        <Var Name="HitSound_Club" Value="" />
+        <Var Name="HitPS_Bullet" Value="" />
+        <Var Name="HitSound_Bullet" Value="" />
+        <Var Name="HitPS_Dud" Value="" />
+        <Var Name="HitSound_Dud" Value="" />
+        <Var Name="AmbientSound_Idle" Value="" />
+        <Var Name="AmbientMinTime_Idle" Value="1" />
+        <Var Name="AmbientMaxTime_Idle" Value="3" />
+        <Var Name="AmbientSound_Alert" Value="" />
+        <Var Name="AmbientMinTime_Alert" Value="1" />
+        <Var Name="AmbientMaxTime_Alert" Value="2" />
+        <Var Name="AmbientSound_Hunt" Value="" />
+        <Var Name="AmbientMinTime_Hunt" Value="1" />
+        <Var Name="AmbientMaxTime_Hunt" Value="2" />
+        <Var Name="NormalAttackDistance" Value="0.8" />
+        <Var Name="NormalDamageSize" Value="1 1 1" />
+        <Var Name="NormalDamageOffset" Value="0 0 1" />
+        <Var Name="NormalAttackHitSound" Value="nec_spider_bite.snt" />
+        <Var Name="NormalAttackDamage" Value="15 20" />
+        <Var Name="NormalAttackForce" Value="30 5" />
+        <Var Name="NormalAttackStrength" Value="1" />
+        <Var Name="NormalDamageType" Value="BloodSplat" />
+        <Var Name="BreakDoorAttackDamage" Value="20 25" />
+        <Var Name="BreakDoorAttackForce" Value="30 5" />
+        <Var Name="BreakDoorAttackStrength" Value="3" />
+        <Var Name="BreakDoorAttackHitSound" Value="" />
+        <Var Name="BreakDoorDamageType" Value="BloodSplat" />
+        <Var Name="NoticeSound" Value="" />
+        <Var Name="GiveUpNoticeSound" Value="" />
+        <Var Name="EnabledSound" Value="" />
+        <Var Name="GroggyDamageCount" Value="3" />
+        <Var Name="AlertToHuntDistance" Value="14" />
+        <Var Name="AlertToInstantHuntDistance" Value="8" />
+        <Var Name="HuntPauseMinTime" Value="1.5" />
+        <Var Name="HuntPauseMaxTime" Value="2.5" />
+        <Var Name="IncreaseAlertSpeedDistance" Value="4" />
+        <Var Name="IncreasedAlertSpeedMul" Value="2" />
+        <Var Name="AlertRunTowardsToHuntLimit" Value="0.1" />
+        <Var Name="AlertRunTowardsCheckDistance" Value="3" />
+        <Var Name="IdleExtraTimeMin" Value="2" />
+        <Var Name="IdleExtraTimeMax" Value="6" />
+        <Var Name="IdleExtraNum" Value="3" />
+    </UserDefinedVariables>
+</Entity>
