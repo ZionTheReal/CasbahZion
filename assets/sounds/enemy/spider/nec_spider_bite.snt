@@ -1,0 +1,10 @@
+<SOUNDENTITY>
+  <SOUNDS>
+  	<Main>
+  		<Sound File="nec_spider_bite1.ogg" />
+  		<Sound File="nec_spider_bite2.ogg" />
+  		<Sound File="nec_spider_bite3.ogg" />
+  	</Main>
+  </SOUNDS>
+  <PROPERTIES Volume="1.2" MinDistance="2" MaxDistance="12" Random="1" Interval="0" FadeEnd="False" FadeStart="False" Stream="false" Loop="false" Use3D="True" Blockable="True" BlockVolumeMul="0.7" Priority="1" />
+</SOUNDENTITY>
