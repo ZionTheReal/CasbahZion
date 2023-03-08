@@ -1484,7 +1484,7 @@ void cLuxPlayerSanity::UpdateCheckEnemySeen(float afTimeStep)
 	{
       	mpPlayer->LowerSanity(mfNearEnemyDecrease, true);
 		
-		//do this in update instead! ZION: Image trail?
+		//do this in update instead!
 		//gpBase->mpEffectHandler->GetRadialBlur()->SetBlurStartDist(0.3f);
 		//gpBase->mpEffectHandler->GetRadialBlur()->FadeTo(0.12f, 0.12f / 3.0f);
 
@@ -1589,7 +1589,7 @@ void cLuxPlayerSanity::UpdateLosingSanity(float afTimeStep)
 
 	float mfSpeedMul = 1 + (1 - fNormalizedSanity) * 2.0f;
 	
-	mfSanityHeartbeatCount += afTimeStep * mfSpeedMul * 0.1f;
+	/*mfSanityHeartbeatCount += afTimeStep * mfSpeedMul * 0.1f;
 	if(mfSanityHeartbeatCount >= 1)
 	{
 		mfSanityHeartbeatCount =0;
@@ -1598,9 +1598,9 @@ void cLuxPlayerSanity::UpdateLosingSanity(float afTimeStep)
 
 		if(mpPlayer->IsDead()==false)
 			gpBase->mpHelpFuncs->PlayGuiSoundData("sanity_heartbeat", eSoundEntryType_Gui, fVol);
-	}
+	}*/
 	
-	mfSanityDrainCount += afTimeStep * mfSpeedMul * 0.33f;
+	/*mfSanityDrainCount += afTimeStep * mfSpeedMul * 0.33f;
 	if(mfSanityDrainCount >= 1)
 	{
 		mfSanityDrainCount =0;
@@ -1614,7 +1614,7 @@ void cLuxPlayerSanity::UpdateLosingSanity(float afTimeStep)
 		
 		if(mpPlayer->IsDead()==false)
 			gpBase->mpHelpFuncs->PlayGuiSoundData(sSoundFile, eSoundEntryType_Gui, mfSanityDrainVolume);
-	}
+	}*/
 }
 
 //-----------------------------------------------------------------------
@@ -2981,7 +2981,7 @@ void cLuxPlayerInDarkness::Update(float afTimeStep)
 		if(	mpPlayer->GetHelperFlashback()->IsActive()==false && mpPlayer->GetSanityDrainDisabled()==false && 
 			gpBase->mpEffectHandler->GetEmotionFlash()->IsActive()==false)
 		{
-			mpPlayer->LowerSanity(mfSanityLossPerSecond*afTimeStep*mfSanityLossMul, true);
+			mpPlayer->LowerSanity(mfSanityLossPerSecond*afTimeStep*mfSanityLossMul, false);
 
 			if(mfShowHintTimer<=0 && mfSanityLossMul > 0.05f)
 			{
