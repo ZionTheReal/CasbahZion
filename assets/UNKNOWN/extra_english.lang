@@ -1,0 +1,85 @@
+<LANGUAGE>
+
+	<!-- You can delete or add any lines contained in <!-- and what ends this notice if you wish.
+	These are only comments made to help organize your file. Remember that some
+	category names MUST NOT be changed, or else they won't work. For example 
+	CustomStoryMain and Journal must stay, but you're free to add any additional 
+	categories with your own names. Have fun! -Mudbill -->
+	
+	<CATEGORY Name="CustomStoryMain">
+		<Entry Name="Description">UNKNOWN, the pre-alpha of Amnesia: The Dark Descent.</Entry>
+	</CATEGORY>
+	<CATEGORY Name="Journal">
+
+		<!-- Notes -->
+		<!-- Historian's Diary -->
+		<Entry Name="Note_NoteHistorian1_Name">Historian's Diary - I</Entry>
+		<Entry Name="Note_NoteHistorian1_Text">Year is 1615[br][br]Writing is local historian who is visiting the area. He mentions that he is collecting stories about the local region.[br][br]The historian says that he is going to a village next to an abandoned castle to gather information about it.</Entry>
+		<Entry Name="Note_NoteHistorian2_Name">Historian's Diary - II</Entry>
+		<Entry Name="Note_NoteHistorian2_Text">Year is 1615[br][br]Writing is local historian who is collecting lore about the area. He mentions that "the castle" plays a big part in stories told.[br][br]The historian says that he is intruiged and will visit the castle the next day.</Entry>
+		<Entry Name="Note_NoteHistorian3_Name">Historian's Diary - III</Entry>
+		<Entry Name="Note_NoteHistorian3_Text">Year is 1615[br][br]Writing is local historian who is collecting lore about the area. He has arrived at the castle and is now searching its interiors for information.[br][br]The historian has found no signs of life around the castle other than critters. He says that he will be heading for the Archives to search for more information regarding the castle.</Entry>
+		<Entry Name="Note_NoteHistorian4_Name">Historian's Diary - IV</Entry>
+		<Entry Name="Note_NoteHistorian4_Text">Year is 1615[br][br]Writing is local historian who is collecting lore about the area. He has arrived at the Archives and is now searching for important documents that tell history.[br][br]Documents found so far point towards the Archives' cellar rooms, citing that it should contain valuable information about the castle.</Entry>
+		
+		<!-- Count's Heritage -->
+		<Entry Name="Note_NoteCount1_Name">Count's Heritage - I</Entry>
+		<Entry Name="Note_NoteCount1_Text">Year is 1150[br][br]Writing is the count of the castle. He mentions that his father has befallen a mysterious illness and his death has granted him lordship over the castle and its region.[br][br]The count is suspicious about his brothers, citing that they observe his heritage with greed.</Entry>
+		<Entry Name="Note_NoteCount2_Name">Count's Heritage - II</Entry>
+		<Entry Name="Note_NoteCount2_Text">Year is 1151[br][br]Writing is the count of the castle. He mentions that he suspects a possible conspiracy against him by one of, if not all, his brothers. The last few months have seen suspicious behaviour from the surrounding lords.[br][br]The count is preparing for anything that may occur and and has put the guard on high alert.</Entry>
+		
+		<!-- Miscellaneous -->
+		<Entry Name="Note_ArchivesRebuild_Name">The Archives' Rebuilding</Entry>
+		<Entry Name="Note_ArchivesRebuild_Text">Annotations and details about the reconstruction and expansion of the Archives. The previous section of the Archives was falling apart and necessitated repairs and expansion. A more modern looking sector together with a cellar were constructed.</Entry>
+		<Entry Name="Note_Tales_Name">Tales from Villagers</Entry>
+		<Entry Name="Note_Tales_Text">Strange stories told about the castle from villagers. Talks about strange treates seen in the forest around the castle and one woman swears here she saw her dead cat running around.</Entry>
+		<Entry Name="Note_AcidNote_Name">Acid Potion</Entry>
+		<Entry Name="Note_AcidNote_Text">Steps and details that tell about an attempt on making a special kind of wine. Talks that the experiment didn't conclude with the wine, but instead produced a potent acid that can burn nearly anything.</Entry>
+		<Entry Name="Note_AcidMovedNote_Name">Acid Ingredients</Entry>
+		<Entry Name="Note_AcidMovedNote_Text">Details and classifications about the ingredients required to produce acid. It mentions that some of the essential ingredients have been moved to the Wine Cellar upstairs from the wine testing room.</Entry>
+
+		<!-- Diaries -->
+		<Entry Name="Diary_DearDiary_Name1">End of the World</Entry>
+		<Entry Name="Diary_DearDiary_Text1">21 December, 2012[br][br]The ground is literally shaking beneath my feet.</Entry>
+
+		<!-- Mementos -->
+		<Entry Name="Quest_HollowNeedleArchives_Text">To begin this adventure, search for a hollow needle in the Archives.</Entry>
+		<Entry Name="Quest_HollowNeedleArchivesCompleted_Text">Hollow Needle - Archives</Entry>
+		<Entry Name="Quest_HollowNeedleMainChamber_Text">Use the Hollow Needle in the Main Chamber to open your way to the Distillery.</Entry>
+		<Entry Name="Quest_HollowNeedleMainChamberCompleted_Text">Hollow Needle - Main Chamber</Entry>
+		<Entry Name="Quest_Lantern_Text">Search behind every book in the Archives to find a lantern.</Entry>
+		<Entry Name="Quest_LanternCompleted_Text">Illuminate - Archives</Entry>
+		<Entry Name="Quest_IngredientsMoved_Text">Find the ingredients scattered in the Wine Cellar.</Entry>
+		<Entry Name="Quest_IngredientsMovedCompleted_Text">Ingredients - Wine Cellar</Entry>
+		<Entry Name="Quest_AcidPotion_Text">Use the ingredients found in the Wine Cellar to create a powerful acid.</Entry>
+		<Entry Name="Quest_AcidPotionCompleted_Text">Acid Potion - Wine Cellar</Entry>
+		<Entry Name="Quest_SpiderWeb_Text">Use the acid potion on the Spider Web in the Archives.</Entry>
+		<Entry Name="Quest_SpiderWebCompleted_Text">Spider Web - Archives</Entry>
+		<Entry Name="Quest_Stairs_Text">Find a way to climb up the broken staircase.</Entry>
+		<Entry Name="Quest_StairsCompleted_Text">Stairs - Wine Cellar</Entry>
+	</CATEGORY>
+	<CATEGORY Name="Inventory">
+
+		<!-- Item Names/Descriptions -->
+		<Entry Name="ItemName_KeyBedroom">Hollow Needle</Entry>
+		<Entry Name="ItemDesc_KeyBedroom">Unlocks the end door at the Entrance Hall.</Entry>
+	</CATEGORY>
+	<CATEGORY Name="Sign">
+
+		<!-- Signs -->
+		<Entry Name="SignStudy">Study Room</Entry>
+	</CATEGORY>
+	<CATEGORY Name="Levels">
+
+		<!-- Levels -->
+		<Entry Name="LevelMainChamber">Main Chamber</Entry>
+		<Entry Name="LevelArchives">Archives</Entry>
+		<Entry Name="LevelWineCellar">Wine Cellar</Entry>
+		<Entry Name="LevelDistillery">Distillery</Entry>
+	</CATEGORY>
+	<CATEGORY Name="DeathHint">
+
+		<!-- Death Hints -->
+		<Entry Name="DHint1">You have to carry on...</Entry>
+	</CATEGORY>
+</LANGUAGE>

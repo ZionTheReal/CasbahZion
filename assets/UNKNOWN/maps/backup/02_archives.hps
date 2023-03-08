@@ -1,0 +1,1446 @@
+/////////////////////////
+//BEGIN DIARY FLASHBACK//
+/*Generates random numbers that are only used 1 time
+ */
+int iLength;		//Length of array
+int iEnd;			//Stop the random number search, incase time loop is ran 1 time too many
+int iRand;			//Temporary random number
+int[] aRand;		//Array to store the requested length of numbers
+int iUniqueRand;	//The unique random int returned
+int UniqueRandom(int iMin, int iMax, bool bRepeat)
+{
+	if(GetLocalVarInt("InitUniqueRandom") == 0){
+		iLength = iMax-iMin+1;
+		iEnd = iLength;
+		
+		aRand.resize(iLength);
+		
+		for(int i=0;i<iLength;i++) {aRand[i] = iMin; iMin++;}
+		
+		SetLocalVarInt("InitUniqueRandom", 1);
+	}	
+	
+	if(iEnd == 0){ 
+		if(bRepeat){  
+			SetLocalVarInt("InitUniqueRandom", 0);
+			return RandFloat(iMin,iMax);
+			
+		} else return 0;	
+	}
+	
+	for(;;){
+		iRand = RandFloat(0, iLength);
+
+		if(aRand[iRand] != -1){
+			iUniqueRand = aRand[iRand];
+			
+			aRand[iRand] = -1;
+
+			iEnd--;
+			break;
+		}
+	}
+	
+	return iUniqueRand;
+}
+
+
+/*Picking the third diary activates the vision
+ */
+void MapFlashbackOver()
+{
+	//If the diary flashback is running, then need to set back some stuff when flashback is over.
+	if(GetLocalVarInt("DiaryFlashbackActive")==1)
+	{
+		SetLocalVarInt("DiaryFlashbackActive",0);		
+		
+		FadeImageTrailTo(1.2f, 2);
+		FadeSepiaColorTo(0.65f, 0.5f);
+		FadePlayerFOVMulTo(2, 0.04f);
+	}	
+}
+
+/*Picking the third diary activates the vision
+ */
+void PickDiary(string &in asItem, int alEntryIdx)
+{	
+	AddLocalVarInt("diary", 1);
+	
+	if(GetLocalVarInt("diary") == 1)
+		PlayMusic("03_paper_daniel01.ogg", false, 0.4f, 0, 10, false);
+	
+	else if(GetLocalVarInt("diary") == 2)
+		PlayMusic("03_paper_daniel02.ogg", false, 0.4f, 0, 10, false);
+	
+	else if(GetLocalVarInt("diary") == 3){	
+		ReturnOpenJournal(false);
+		
+		SetLocalVarString("startposition", "Start_"+asItem);
+		
+		PlayMusic("03_event_tomb.ogg", false, 0.4f, 0, 10, false);
+		
+		AddTimer("TimerFlashBack", 0.01f, "TimerFlashBack");
+	}	
+	
+	/*DEBUG
+	 */
+	AddDebugMessage("Got Diary and Int is: "+GetLocalVarInt("diary"), true);
+}
+/*Player touches orb and end of vision is triggered
+ */
+void InteractOrb(string &in entity)
+{	
+	RemoveTimer("TimerFlashBack");
+	
+	SetLocalVarInt("TimerFlashBack", 9);
+
+	AddTimer("TimerFlashBack", 0.1f, "TimerFlashBack");
+	
+	AddEffectVoice("CH01L03_DanielDiary03_05", "", "Flashbacks", "CH01L03_DanielDiary03_05", false, "", 0, 0);
+	
+	if(GetLanternActive()){
+		SetLanternActive(false, true);
+		SetLanternDisabled(true);
+	} else SetLanternDisabled(true);
+			
+	/*DEBUG
+	 */
+	AddDebugMessage("Interacted with ORB", true);
+}
+void TimerFlashBack(string &in asTimer)
+{	
+	/*Configurables
+	 */
+	int iMaxEventStep = 18;		//How many steps there are in the switch event
+	float fEventSpeed = 0.5f;	//The default time between steps in an event
+	
+	/*Helpers - Do not edit
+	 */
+	string sEvent = asTimer;	//Using first timer name for variable, timer name & callback for the timer that loops
+	AddLocalVarInt(sEvent, 1);	//What step to play in the event
+	
+	if(GetPlayerLampOil() <= 10) AddPlayerLampOil(5); //Make sure player always has oil for lantern during flashback
+	
+	switch(GetLocalVarInt(sEvent)){
+		case 1:
+			SetPlayerLookSpeedMul(0.8f);
+			
+			SetPlayerCrouchDisabled(true);
+			SetInventoryDisabled(true);
+			SetSanityDrainDisabled(true);
+			
+			if(GetLanternActive())
+			{
+				SetLocalVarInt("LanternActive", 1);
+				SetLanternActive(false, true);
+				SetLanternDisabled(true);
+			}
+			else 
+			{
+				SetLanternDisabled(true);
+			}
+			
+			StartEffectFlash(0.1f, 0.1f, 0.25f);
+			SetPlayerRunSpeedMul(0.6);
+			SetPlayerMoveSpeedMul(0.75f);
+			PlaySoundAtEntity("SoundFlash1", "scare_thump_flash.snt", "Player", 0.0f, false);
+			PlaySoundAtEntity("creak", "03_creak.snt", "Player", 16.0f, false);
+			PlaySoundAtEntity("Breath1", "react_breath.snt", "Player", 1.0f, false);
+			fEventSpeed = 0.3f;
+		break;
+		case 2:
+			SetLocalVarInt("DiaryFlashbackActive",1);
+			
+			SetPlayerLookSpeedMul(0.6f);
+			//AddEffectVoice("CH01L03_DanielDiary03_01", "", "Flashbacks", "CH01L03_DanielDiary03_01", false, "", 0, 0);
+			//SetEffectVoiceOverCallback("DiaryPartsOver");
+			StartScreenShake(0.01f, 0.75f, 0.25f,1.5f);
+			FadePlayerRollTo(60, 5, 5);
+			FadeImageTrailTo(1.2f, 2);
+			FadeSepiaColorTo(0.65f, 0.5f);
+			FadePlayerFOVMulTo(4, 0.04f);
+			MovePlayerHeadPos(0, -1.2f, 0, 0.3f, 0.25f);
+			//AddTimer("extrap", 0.5, "TimerExtraVoiceEffects");
+			//AddTimer("extrap2", 1.0f, "TimerExtraVoiceEffects");
+			//AddTimer("extrap3", 1.75f, "TimerExtraVoiceEffects");
+			//AddTimer("extrap4", 2.75f, "TimerExtraVoiceEffects");
+			//AddTimer("extrap5", 3.5f, "TimerExtraVoiceEffects");
+			fEventSpeed = 2.0f;
+		break;
+		case 3:
+			SetPlayerLookSpeedMul(0.4f);
+			for(int i=1;i<=3;i++)
+			{
+				StopSound("ambs"+i, 8);
+			}
+			FadePlayerRollTo(-60, 10, 10);
+			MovePlayerHeadPos(0, 0, 0, 0.2f, 0.25f);
+			SetPlayerRunSpeedMul(0.3);
+			SetPlayerMoveSpeedMul(0.5f);
+			PlaySoundAtEntity("Breath1", "react_breath.snt", "Player", 1.5f, false);
+			fEventSpeed = 1.75f;
+		break;
+		case 4:
+			SetPlayerLookSpeedMul(0.2f);
+			//FadeOut(6);
+			FadeOut(4);
+			FadePlayerRollTo(0, 10, 10);
+			MovePlayerHeadPos(0, -1.2f, 0, 1.0f, 0.25f);
+			StartPlayerLookAt("AreaLookUp", 0.5f, 0.5f, "");
+			SetPlayerRunSpeedMul(0);
+			SetPlayerMoveSpeedMul(0.3f);
+			PlaySoundAtEntity("rock_amb", "03_rock_amb.snt", "Player", 6, false);
+			PlaySoundAtEntity("Breath1", "react_breath.snt", "Player", 1.25f, false);
+			//fEventSpeed = 1.5f;
+			fEventSpeed = 4.0f;
+		break;
+		case 5:
+			SetPlayerLookSpeedMul(0.1f);
+			FadePlayerFOVMulTo(2, 0.1f);
+			AddEffectVoice("CH01L03_DanielDiary03_01", "", "Flashbacks", "CH01L03_DanielDiary03_01", false, "", 0, 0);
+			SetEffectVoiceOverCallback("DiaryPartsOver");
+			AddTimer("extrap", 4.5, "TimerExtraVoiceEffects");
+			AddTimer("extrap2", 5.0f, "TimerExtraVoiceEffects");
+			AddTimer("extrap3", 5.75f, "TimerExtraVoiceEffects");
+			AddTimer("extrap4", 6.75f, "TimerExtraVoiceEffects");
+			AddTimer("extrap5", 7.5f, "TimerExtraVoiceEffects");
+			SetSkyBoxActive(false);
+			SetPlayerActive(false);
+			MovePlayerHeadPos(0, 0, 0, 0.5f, 0.25f);
+			PlaySoundAtEntity("Breath1", "react_breath.snt", "Player", 1.5f, false);
+			SetLocalVarInt("VoiceResume", 5);
+			RemoveTimer(sEvent);
+			return;
+		break;
+		case 6:
+			StartPlayerLookAt("AreaRock_4", 5, 5, "");
+			AddEffectVoice("CH01L03_DanielDiary03_02", "", "Flashbacks", "CH01L03_DanielDiary03_02", false, "", 0, 0);
+			SetEffectVoiceOverCallback("DiaryPartsOver");
+			SetLocalVarInt("VoiceResume", 7);
+			MovePlayerHeadPos(0, -1.2f, 0, 3, 0.25f);
+			PlaySoundAtEntity("loop", "03_loop.snt", "Player", 2, false);
+			StopSound("creak", 8);
+			AddTimer("randrock", 10, "TimerRandRock");
+			AddTimer("extra1", 0.5f, "TimerExtraVoiceEffects");
+			AddTimer("extra2", 2, "TimerExtraVoiceEffects");
+			AddTimer("extra3", 3.5f, "TimerExtraVoiceEffects");
+			AddTimer("extra3.1", 4.5f, "TimerExtraVoiceEffects");
+			fEventSpeed = 6;
+		break;
+		case 7:
+			FadeIn(5);
+			FadeImageTrailTo(0, 2);
+			FadePlayerFOVMulTo(1, 0.1f);
+			TeleportPlayer("PlayerStartArea_Flash");
+			StartPlayerLookAt("orb_1", 0.1f, 0.1f, "");
+			MovePlayerHeadPos(0, 0, 0, 0.25f, 0.25f);
+			PlaySoundAtEntity("orb_loop", "03_orb_loop.snt", "orb_1", 6, false);
+			StopSound("loop", 4);
+			SetLocalVarInt(sEvent, 7);
+			AddTimer("lookat", 8, "TimerExtraVoiceEffects");
+			SetPlayerActive(true);
+			RemoveTimer(sEvent);
+			return;
+		break;
+		case 8:
+			//SetLanternDisabled(false);
+			//SetLanternActive(true, false);
+			SetPlayerLookSpeedMul(0.3f);
+			AddEffectVoice("CH01L03_DanielDiary03_03", "", "Flashbacks", "CH01L03_DanielDiary03_03", false, "", 0, 0);
+			AddTimer("extra4", 0.1, "TimerExtraVoiceEffects");
+			AddTimer("extra5", 2, "TimerExtraVoiceEffects");
+			AddTimer("extra6", 3.5f, "TimerExtraVoiceEffects");
+		break;
+		case 9:
+			SetPlayerLookSpeedMul(0.5f);
+			SetLocalVarInt(sEvent, 8);
+			AddTimer(sEvent, fEventSpeed, sEvent);
+			return;
+		break;
+		case 10:
+			SetPlayerMoveSpeedMul(0.5f);
+			SetPlayerLookSpeedMul(0.3f);
+			StartScreenShake(0.025f, 2,4,4);
+			FadeLightTo("OrbLight",1,1,1,1,0,4);
+			FadePlayerFOVMulTo(0.2, 0.2f);
+			SetPropActiveAndFade("orb_1", false, 10);
+			FadePlayerRollTo(60, 1, 1);
+			AddEffectVoice("CH01L03_DanielDiary03_06", "", "Flashbacks", "CH01L03_DanielDiary03_06", false, "", 0, 0);
+			fEventSpeed = 4.0f;
+		break;
+		case 11: 
+			SetPlayerMoveSpeedMul(0.3f);
+			SetPlayerLookSpeedMul(0.2f);
+			SetPlayerActive(false);
+			FadePlayerFOVMulTo(3, 0.25f);
+			StartPlayerLookAt("orb_1", 0.5f, 0.5f, "");
+			FadeLightTo("OrbLight",1,1,1,1,20,8);
+			FadePlayerRollTo(-60, 2, 2);
+			MovePlayerHeadPos(0, -0.5f, 0, 0.2f, 0.2f);
+			SetEffectVoiceOverCallback("DiaryPartsLast");
+			StopSound("orb_loop", 4);
+			PlaySoundAtEntity("orb_loop2", "03_orb_loop_loud.snt", "orb_1", 6, false);
+			fEventSpeed = 2.0f;
+		break;
+		case 12:
+			SetPlayerMoveSpeedMul(0.1f);
+			SetPlayerLookSpeedMul(0.1f);
+			StartEffectFlash(4, 2, 4);
+			FadePlayerRollTo(0, 1, 1);
+			fEventSpeed = 5.0f;
+		break;
+		case 13:
+			FadeOut(1);
+			MovePlayerHeadPos(0, -1.3f, 0, 5, 0.25f);
+			PlaySoundAtEntity("player_fall", "player_bodyfall.snt", "Player", 0.5f, false);
+			fEventSpeed = 0.35f;
+		break;
+		case 14:
+			StartPlayerLookAt("AreaLookUp", 0.5f, 0.5f, "");
+			PlaySoundAtEntity("BreakOrb", "03_orb.snt", "Player", 0.0f, false);
+			PlaySoundAtEntity("creak", "03_creak.snt", "Player", 8.0f, false);
+			StopSound("orb_loop2", 1);
+			RemoveTimer("randrock");
+			fEventSpeed = 1.0f;
+		break;
+		case 15:
+			StopSound("rock_amb", 8);
+			fEventSpeed = 4.0f;
+		break;
+		case 16:
+			FadePlayerFOVMulTo(1, 1);
+			StartPlayerLookAt("candlestick_tri_5", 5, 5, "");
+			SetPlayerLookSpeedMul(0.1f);
+			PlaySoundAtEntity("ambs1", "03_amb.snt", "AmbSounds", 4.0f, true);
+			PlaySoundAtEntity("ambs2", "03_amb_library.snt", "AmbSounds", 4.0f, true);
+			PlaySoundAtEntity("ambs3", "03_insects.snt", "AmbSounds", 4.0f, true);
+			StopSound("creak", 6);
+			AddTimer("music", 8, "TimerExtraVoiceEffects");
+			fEventSpeed = 8.0f;
+		break;
+		case 17:
+			SetLocalVarInt("DiaryFlashbackActive",0);
+			SetPlayerLookSpeedMul(0.5f);
+			FadeSepiaColorTo(0, 0.05f);
+			MovePlayerHeadPos(0, 0, 0, 0.5, 0.25f);
+			
+			SetPlayerCrouchDisabled(false);
+			SetInventoryDisabled(false);
+			SetSanityDrainDisabled(false);
+			
+			SetPlayerActive(true);
+			
+			//SetSkyBoxActive(true);
+			if(GetLocalVarInt("LanternActive") == 1)
+			{
+				SetLocalVarInt("LanternActive", 0);
+				SetLanternDisabled(false);
+				SetLanternActive(true, true);
+			}
+			else
+			{
+				SetLanternDisabled(false);
+			}
+			
+			StopPlayerLookAt();
+			TeleportPlayer(GetLocalVarString("startposition"));
+			PlaySoundAtEntity("Breath3", "react_breath_slow.snt", "Player", 0.8f, false);
+			CreateParticleSystemAtEntity("pearls", "ps_orb_on_player.ps", "Player", false);
+			FadeIn(7);
+			fEventSpeed = 4.0f;
+		break;
+		case 18:
+			SetPlayerLookSpeedMul(1.0f);
+			AddTimer("lookloop", 0.1f, "TimerRandomLook");
+		break;
+	}
+	
+	if(GetLocalVarInt(sEvent) <= iMaxEventStep) AddTimer(sEvent, fEventSpeed, sEvent);
+}
+void TimerExtraVoiceEffects(string &in asTimer)
+{
+	if(asTimer == "extrap") PlaySoundAtEntity("pound1", "03_pound.snt", "Player", 0.01, false);	
+	if(asTimer == "extrap2") PlaySoundAtEntity("pound2", "03_pound.snt", "Player", 0.02, false);	
+	if(asTimer == "extrap3") PlaySoundAtEntity("pound3", "03_pound.snt", "Player", 0.03, false);
+	if(asTimer == "extrap4") PlaySoundAtEntity("pound3", "03_pound.snt", "Player", 0.04, false);
+	if(asTimer == "extrap5") PlaySoundAtEntity("pound3", "03_pound.snt", "Player", 0.05, false);
+	if(asTimer == "extra1") PlaySoundAtEntity("player_fall", "player_bodyfall.snt", "Player", 0.2f, false);
+	if(asTimer == "extra2") PlaySoundAtEntity("gasp1", "react_pant.snt", "Player", 0.75f, false);
+	if(asTimer == "extra3") PlaySoundAtEntity("gasp1", "react_pant.snt", "Player", 0.8f, false);
+	if(asTimer == "extra3.1") PlaySoundAtEntity("gasp1", "react_pant.snt", "Player", 0.85f, false);
+	if(asTimer == "extra4") PlaySoundAtEntity("player_push", "player_climb.snt", "Player", 0.5f, false);
+	if(asTimer == "extra5") PlaySoundAtEntity("player_push", "player_climb.snt", "Player", 0.25f, false);
+	if(asTimer == "extra6") PlaySoundAtEntity("player_push", "player_climb.snt", "Player", 0.0f, false);
+	if(asTimer == "extra7"){ 
+		AddEffectVoice("CH01L03_DanielDiary03_07", "", "Flashbacks", "CH01L03_DanielDiary03_07", false, "", 0, 0);
+		PlaySoundAtEntity("rock", "03_lift_rock.snt", "Player", 3, false);
+	}
+	if(asTimer == "extra7.1") PlaySoundAtEntity("drag1", "03_drag_dirt.snt", "Player", 0, false);
+		
+	if(asTimer == "extra7.2") PlaySoundAtEntity("drag2", "03_drag_dirt.snt", "Player", 0.25f, false);
+	if(asTimer == "extra7.3") PlaySoundAtEntity("drag3", "03_drag_dirt.snt", "Player", 0.5f, false);	
+	if(asTimer == "extra8"){ 
+		StopSound("rock", 3);
+		PlaySoundAtEntity("crew", "03_crew_talk.snt", "Player", 0, false);
+	}
+	
+	if(asTimer == "music"){
+		PlaySoundAtEntity("pianoonplayer", "03_waking_up.snt", "Player", 1, false);
+		SetPlayerLookSpeedMul(0.3f);
+	}
+	if(asTimer == "lookat"){ 
+		StartPlayerLookAt("orb_1", 0.6f, 0.6f, "");
+		SetPlayerLookSpeedMul(0.1f);
+	}
+}
+void DiaryPartsOver()
+{
+	SetLocalVarInt("TimerFlashBack", GetLocalVarInt("VoiceResume"));
+	
+	AddTimer("TimerFlashBack", 0.01f, "TimerFlashBack");
+	
+	/*DEBUG
+	 */	
+	AddDebugMessage("Resume with CH01L03_DanielDiary03_0", true);
+}
+void DiaryPartsLast()
+{
+	AddTimer("extra7", 0.01f, "TimerExtraVoiceEffects");
+	AddTimer("extra8", 3, "TimerExtraVoiceEffects");
+	AddTimer("extra7.1", 5, "TimerExtraVoiceEffects");
+	AddTimer("extra7.2", 6.5, "TimerExtraVoiceEffects");
+	AddTimer("extra7.3", 8, "TimerExtraVoiceEffects");
+}
+void CollideOrb(string &in asParent, string &in asChild, int alState)
+{
+	if(asChild == "AreaHalfToOrb"){
+		AddEffectVoice("CH01L03_DanielDiary03_04", "", "Flashbacks", "CH01L03_DanielDiary03_04", false, "", 0, 0);
+	}
+	if(asChild == "AreaCloseToOrb"){
+		SetEntityPlayerLookAtCallback("orb_1", "LookAtOrb", true);
+	}
+}
+void LookAtOrb(string &in entity, int alState)
+{
+	if(alState == 1){
+		SetEntityPlayerInteractCallback("orb_1", "InteractOrb", true);
+		//AddEntityCollideCallback("Player", "AreaOrbX", "CollideActualOrb", false, 0);	
+	}
+}
+/*void CollideActualOrb(string &in asParent, string &in asChild, int alState)
+{
+	InteractOrb("hitpa");
+	//SetEntityPlayerInteractCallback("orb_1", "", true);
+}*/
+/*Player movement gets slower and slower the farther away from the path he goes
+ */
+void CollideSlowArea(string &in asParent, string &in asChild, int alState)
+{
+	if(alState == 1){
+		if(asChild == "SlowArea_1") SetPlayerMoveSpeedMul(0.75f);
+		else if(asChild == "SlowArea_2") SetPlayerMoveSpeedMul(0.6f);
+		else if(asChild == "SlowArea_3") SetPlayerMoveSpeedMul(0.5f);
+		else SetPlayerMoveSpeedMul(0.35f);
+
+		/*DEBUG
+		 */	
+		AddDebugMessage("Player enter "+asChild, true);
+	} 
+	else {
+		if(asChild == "SlowArea_1"){
+			SetPlayerMoveSpeedMul(0.6f);
+			
+			if(GetLocalVarInt("FirstEnterSlowArea") == 0){
+				AddEntityCollideCallback("Player", "SlowArea_2", "CollideSlowArea", false, 0);	
+				
+				SetLocalVarInt("FirstEnterSlowArea", 1);
+			}
+		}
+		else if(asChild == "SlowArea_2"){
+			SetPlayerMoveSpeedMul(0.5f);
+			
+			if(GetLocalVarInt("FirstEnterSlowArea") == 1){
+				AddEntityCollideCallback("Player", "SlowArea_3", "CollideSlowArea", false, 0);	
+				
+				SetLocalVarInt("FirstEnterSlowArea", 2);
+			}
+		}
+		else if(asChild == "SlowArea_3"){
+			SetPlayerMoveSpeedMul(0.35f);
+			
+			if(GetLocalVarInt("FirstEnterSlowArea") == 2){
+				AddEntityCollideCallback("Player", "SlowArea_4", "CollideSlowArea", false, 0);	
+				
+				SetLocalVarInt("FirstEnterSlowArea", 3);
+			}
+		} 
+		else SetPlayerMoveSpeedMul(0.2f);
+
+		/*DEBUG
+		 */	
+		AddDebugMessage("Player leave "+asChild, true);
+	}
+}
+/*Some random rock falling sounds while walking towards orb
+ */
+void TimerRandRock(string &in asTimer)
+{
+	int iRand = UniqueRandom(1, 6, true);
+	float fLoop = RandFloat(5,10);
+
+	PlaySoundAtEntity("RockSound"+iRand, "03_rock_move.snt", "AreaRock_"+iRand, 0.4f, false);
+	
+	AddTimer("randrock", fLoop, "TimerRandRock");
+	
+	/*DEBUG
+	 */	
+	AddDebugMessage("Sound in AreaRock_"+iRand, true);
+}
+//END DIARY FLASHBACK//
+///////////////////////
+
+
+//////////////////////////
+//BEGIN RANDOM LOOK SPIN//
+/*Player has a bit of a random head during the level
+ */
+ bool bRoll = true;
+void TimerRandomLook(string &in asTimer)
+{
+	int iLook = RandFloat(1,5);
+	
+	if(iLook > 4){
+		SetPlayerRunSpeedMul(0.5);
+		SetPlayerMoveSpeedMul(1);
+		FadePlayerRollTo(0, 0.5f, 1); 
+		FadePlayerFOVMulTo(1, 1);
+		FadeImageTrailTo(0,1.5f);
+		
+		AddTimer("lookloop", RandFloat(6.0f,8.0f), "TimerRandomLook");
+		return;
+	}
+	
+	if(iLook == 1 or iLook == 3)
+		PlaySoundAtEntity("sigh", "react_sigh.snt", "Player", 1.0 / 0.75f, false);
+	
+	FadePlayerFOVMulTo(RandFloat(0.7f,1.3f), RandFloat(0.05f,0.1f));
+	
+	SetPlayerMoveSpeedMul(RandFloat(0.6f,0.9f));
+	SetPlayerRunSpeedMul(RandFloat(0.2f,0.4f));
+	
+	FadeImageTrailTo(RandFloat(0.75f,1.0f),RandFloat(0.75f,1.25f));
+	
+	bRoll= bRoll == false ? true : false;
+	
+	if(bRoll)
+		FadePlayerRollTo(RandFloat(2,10), RandFloat(0.075f,0.35f), RandFloat(0.55f,1.15f)); 
+	else
+		FadePlayerRollTo(RandFloat(-2,-10), RandFloat(0.05f,0.25f), RandFloat(0.5f,1)); 
+	
+	AddLocalVarInt("Dizzy",1);
+	
+	if(GetLocalVarInt("Dizzy") <= 4) AddTimer("lookloop", RandFloat(3.0f,6.0f), "TimerRandomLook");
+	else {
+		SetPlayerRunSpeedMul(1);
+		SetPlayerMoveSpeedMul(1);
+		FadePlayerRollTo(0, 0.5f, 1); 
+		FadePlayerFOVMulTo(1, 1);
+		FadeImageTrailTo(0,1.5f);
+	}
+}
+void StopRandomLook()
+{
+	RemoveTimer("lookloop");
+	
+	SetPlayerMoveSpeedMul(1);
+	FadePlayerFOVMulTo(1, 1);
+	FadeImageTrailTo(0,1.0f);
+	FadePlayerRollTo(0, 0.5f, 2); 
+}
+//END RANDOM LOOK SPING//
+/////////////////////////
+
+
+//////////////////////////
+//BEGIN MANY BOOKS SCARE//
+//Skipped for now.
+/*void CollideBeginManyBook(string &in asParent, string &in asChild, int alState)
+{
+	PlaySoundAtEntity("SoundScratchx_1", "scare_scratch", "throwbook_13", 0.5f, false);
+	
+	PlayMusic("03_event_books.ogg", false, 0.7f, 0, 10, false);
+	
+	AddTimer("manybooks", 3, "TimerManyBooks");
+	
+	//DEBUG
+	AddDebugMessage("Begin Many Books Scare ", true);
+}
+void TimerManyBooks(string &in asTimer)
+{
+	AddLocalVarInt("VarMany", 1);	//What step to play in the event
+	float fSpeedMany = 0.5f;	//The default time between steps in an event
+	
+	switch(GetLocalVarInt("VarMany")) {
+		case 1:
+			CreateParticleSystemAtEntity("PSGhostBang", "ps_break_wood.ps", "throwbook_14", false);
+			PlaySoundAtEntity("SoundBang", "break_wood.snt", "throwbook_13", 0.0f, false);
+			PlaySoundAtEntity("SoundFearx2", "scare_male_terrified.snt", "Player", 0.5f, false);
+			fSpeedMany = 0.2f;
+		break;
+		case 2:
+			GiveSanityDamage(10, true);
+			for(int i=1;i<=5;i++) AddPropForce("throwbook_"+i, -100, 50, 0, "world");
+			fSpeedMany = 0.2f;
+		break;
+		case 3:
+			for(int i=6;i<=10;i++) AddPropForce("throwbook_"+i, -200, 120, -50, "world");
+			fSpeedMany = 0.1f;
+		break;
+		case 4:
+			for(int i=11;i<=15;i++) AddPropForce("throwbook_"+i, -300, 200, 50, "world");
+			FadeLightTo("BoxLight_4",1,0,0.2f,1,-1,0.1f);
+			fSpeedMany = 0.2f;
+		break;
+		case 5:
+			StartEffectFlash(0.05f, 0.15f, 0.05f);
+			PlaySoundAtEntity("SoundFlash1", "scare_thump_flash.snt", "Player", 0, false);
+			fSpeedMany = 0.8f;
+		break;
+		case 6:
+			FadeLightTo("BoxLight_4",0,0,0,0,-1,0.1f);
+			StopSound("SoundFearx2", 2);
+			StopSound("SoundScratchx_1", 2);
+			SetPropActiveAndFade("throwbook_*", false, 2);
+		break;
+	}
+
+	if(GetLocalVarInt("VarMany") < 6) AddTimer("manybooks", fSpeedMany, "TimerManyBooks");
+}*/
+//END MANY BOOKS SCARE//
+////////////////////////
+
+
+/////////////////////
+//BEGIN PIANO MUSIC//
+void CollideBeginPiano(string &in asParent, string &in asChild, int alState)
+{
+	if(asChild == "AreaSecondPiano"){
+		SetLeverStuckState("piano_2", 0, false);
+		AddBodyImpulse("piano_2_BodyLid", 0,100, 0, "world");
+		
+		PlaySoundAtEntity("SoundPiano2", "general_piano02.snt", "AreaPlayPiano", 0.0f, false);
+		//PlaySoundAtEntity("SoundWind", "general_wind_whirl.snt", "AreaPlayPiano", 0.5f, false);
+		PlaySoundAtEntity("SoundWind", "scare_wall_scratch_single", "AreaPlayPiano", 0.5f, false);
+		
+		SetEntityActive("chair_nice01_12",	false);
+		SetEntityActive("chair_ghost", true);
+		
+		AddTimer("fallbook", 1.5f, "FallBook");
+		return;
+	}
+	
+	PlaySoundAtEntity("SoundPiano", "general_piano01.snt", "piano_1", 0.0f, false);
+	//PlaySoundAtEntity("SoundWind", "general_wind_whirl.snt", "tome01_8", 0.0f, false);
+	PlaySoundAtEntity("SoundWind", "03_wall_scratch.snt", "tome01_8", 0.5f, false);
+	
+	//SetLeverStuckState("piano_1", 0, false);
+	//AddBodyImpulse("piano_1_BodyLid", 0,100, 0, "world");
+		
+	AddTimer("fallbook", 1.5f, "FallBook");
+	
+	AddTimer("fallbook1", 2.2f, "FallBook");
+	
+	AddTimer("fallbook2", 2.5f, "FallBook");
+}
+void CollideCloseLid(string &in asParent, string &in asChild, int alState)
+{
+	SetLeverStuckState("piano_1", 0, false);
+	AddPropImpulse("piano_1", 0,0,10, "world");
+	
+	StopSound("SoundPiano", 1.0f);
+	
+	GiveSanityDamage(10, true);
+	
+	CreateParticleSystemAtEntity("PSdust", "ps_dust_piano.ps", "AreaPianoDust", false);
+	
+	AddTimer("liddust", 0.4f, "FallBook");
+}
+
+void FallBook(string &in asTimer)
+{
+	if(asTimer == "liddust"){
+		PlaySoundAtEntity("LidClose", "level_wood_min_max01.snt", "piano_1", 0.0f, false);
+		PlaySoundAtEntity("enemy", "enemy/grunt/amb_idle",  "AreaDustScrape_6", 0, false);
+		return;
+	}
+	else if(asTimer == "fallbook1"){
+		CreateParticleSystemAtEntity("PSdustbook", "ps_dust_impact.ps", "tome01_8", false);
+		StartScreenShake(0.005f, 0.5f, 0.5f, 0.5f);
+		return;
+	}
+	else if(asTimer == "fallbook2"){
+		GiveSanityDamage(10, true);
+		return;
+	}	
+	
+	StopSound("SoundWind", 2);
+	
+	AddPropForce("tome01_8", 0, 300, -700, "world");
+}
+//END PIANO MUSIC//
+///////////////////
+
+
+///////////////////////////
+//BEGIN SECRET SHELF DOOR//
+void InteractLibDoor(string &in asEntity)
+{
+	AddTimer("doormess", 0.5f, "TimerLockedDoorMess");
+}
+void TimerLockedDoorMess(string &in asTimer)
+{
+	SetMessage("Ch01Level03", "DoorLocked", 0);
+	AddQuest("03LockedLibrary", "03LockedLibrary");
+}
+
+void EntityCallBreakWall(string &in asEntity, string &in type)
+{
+	SetEntityActive("PassageInteractArea", false);
+	//SetEntityPlayerInteractCallback("mansionbase_secret_passage_1", "", true);
+	
+	GiveSanityBoostSmall();
+	
+	CompleteQuest("03LockedLibrary", "03LockedLibrary");
+}
+
+void CollideSecretBook(string &in asParent, string &in asChild, int alState)
+{
+	if(alState == 1) {
+		SetLocalVarInt("Var"+asParent, 1);
+		
+		AddTimer(asParent, 20, "PushBackBook");
+		
+		SetPropObjectStuckState(asParent, 1);
+		
+		PlaySoundAtEntity("Sound"+asParent, "gameplay_tick", asParent, 0.0f, false);
+		
+		StartScreenShake(0.001f, 0.5f, 0.5f, 0.5f);
+		
+		PlayGuiSound("16_lever_stuck", 0.3f);
+		
+		/*DEBUG
+		 */
+		AddDebugMessage("Book in area: "+asParent, true);
+	} else {
+		SetLocalVarInt("Var"+asParent, 0);
+		
+		RemoveTimer(asParent);
+		
+		PlaySoundAtEntity("Sound2"+asParent, "lock_door", asParent, 1.5f, false);
+		PlayGuiSound("16_lever_stuck", 0.2f);
+		
+		StopSound("Sound"+asParent, 1.0f);
+		
+		/*DEBUG
+		 */
+		AddDebugMessage("Book out of area: "+asParent, true);
+	}
+	
+	/*All books are pulled before time is out and the secret room is revealed.
+	 */
+	if(GetLocalVarInt("VarSecretBook_1") == 1 && GetLocalVarInt("VarSecretBook_2") == 1 && GetLocalVarInt("VarSecretBook_3") == 1) {
+		
+		FadeLightTo("PointLight_30", 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 3.0f);
+		
+		SetMoveObjectState("shelf_secret_door_1", 1);
+		
+		SetPropObjectStuckState("SecretBook_*", -1);
+		
+		SetEntityInteractionDisabled("SecretBook_*", true);
+		
+		PlaySoundAtEntity("BooksDone", "lock_door", "Player", 0, false);
+		
+		CreateParticleSystemAtEntity("dust", "ps_dust_falling_door_quick", "AreaDoorParticle", false);
+		
+		for(int i=1;i<=3;i++){ RemoveTimer("SecretBook_"+i); StopSound("SoundSecretBook_"+i, 0.0f); }
+		
+		GiveSanityBoostSmall();
+		
+		PlayMusic("03_puzzle_secret.ogg", false, 0.7f, 0, 10, false);
+		
+		CompleteQuest("03Books", "03Books");
+		
+		/*DEBUG
+		 */
+		AddDebugMessage("All books in position, move shelf!", true);
+	}
+
+}
+void PushBackBook(string &in asTimer)
+{
+	SetPropObjectStuckState(asTimer, -1);
+	
+	AddTimer("2"+asTimer, 0.25f, "PushBackBook02");
+	
+	/*DEBUG
+	 */
+	AddDebugMessage("Push back book: "+asTimer, true);
+}
+void PushBackBook02(string &in asTimer)
+{
+	if(asTimer == "2SecretBook_1") SetPropObjectStuckState("SecretBook_1", 0);
+	else if(asTimer == "2SecretBook_2") SetPropObjectStuckState("SecretBook_2", 0);
+	else SetPropObjectStuckState("SecretBook_3", 0);
+}
+
+/*Give quest after the visions about the books
+ */
+void VisionOverBooks()
+{
+	AddQuest("03Books", "03Books");
+	
+	SetEntityPlayerInteractCallback("shelf_secret_door_1", "InteractMoveShelf", true);
+	
+	AddTimer("enemys", 1.0f, "TimerPlayEnemy");
+	
+	//If the diary flashback is running, then need to set back some stuff when flashback is over.
+	if(GetLocalVarInt("DiaryFlashbackActive")==1)
+	{
+		SetLocalVarInt("DiaryFlashbackActive",0);		
+		
+		FadeImageTrailTo(1.2f, 2);
+		FadeSepiaColorTo(0.65f, 0.5f);
+		FadePlayerFOVMulTo(2, 0.04f);
+	}	
+}
+void TimerPlayEnemy(string &in asTimer)
+{
+	PlaySoundAtEntity("enemy", "enemy/grunt/amb_idle",  "AreaDustScrape_6", 0, false);
+}
+
+void InteractMoveShelf(string &in asEntity)
+{
+	SetMessage("Ch01Level03", "MoveShelf", 0);
+}
+
+/*Find the key for the wine cellar
+ */
+void PickKey(string &in asEntity, string &in asType)
+{	
+	//GiveSanityBoostSmall();
+	
+	SetGlobalVarString(asEntity, asEntity);
+	
+	AddEntityCollideCallback("Player", "AreaActivateLastPiano", "CollideLastPiano", true, 1);
+	
+	AddTimer("TimerEGrunt", 0.2f, "TimerEGrunt");
+}
+
+void TimerEGrunt(string &in asTimer)
+{
+	int iMaxEventStep = 8;
+	float fEventSpeed = 0.5f;
+	string sEvent = asTimer;
+
+	AddLocalVarInt(sEvent, 1);
+
+	switch(GetLocalVarInt(sEvent)){
+		case 1:
+			SetPlayerMoveSpeedMul(0.8f);
+			SetPlayerRunSpeedMul(0.8f);
+			PlaySoundAtEntity("growl", "03_amb_idle", "AreaGrunt_1", 0.3f, false);
+			fEventSpeed = 0.6f;
+		break;
+		case 2:
+			SetPlayerMoveSpeedMul(0.6f);
+			SetPlayerRunSpeedMul(0.6f);
+			PlaySoundAtEntity("growl", "03_attack_claw", "AreaGrunt_1", 0.0f, false);
+			fEventSpeed = 0.3f;
+		break;
+		case 3:
+			SetPlayerMoveSpeedMul(0.4f);
+			SetPlayerRunSpeedMul(0.4f);
+			
+			SetEntityActive("mansion_1", false);
+			SetEntityActive("mansion_8", true);
+			
+			StartScreenShake(0.01f, 0.3f, 0.2f, 0.5f);
+			
+			PlaySoundAtEntity("hitdoor", "break_wood", "AreaGrunt_1", 0.0f, false);
+			GiveSanityDamage(10.0f, true);
+			
+			CreateParticleSystemAtEntity("breakdoor", "ps_break_wood.ps", "mansion_8", false);
+			
+			FadeImageTrailTo(2.0f, 2.0f);
+		break;
+		case 4:
+			PlayMusic("15_event_prisoner", false, 1.0f, 1.0f, 10, false);
+			SetPlayerMoveSpeedMul(0.5f);
+			SetPlayerRunSpeedMul(0.5f);
+			PlayGuiSound("react_scare", 0.7f);
+			fEventSpeed = 2.0f;
+		break;
+		case 5:
+			StopMusic(4.0f, 10);
+			SetPlayerMoveSpeedMul(0.7f);
+			SetPlayerRunSpeedMul(0.7f);
+			PlayGuiSound("react_breath", 0.8f);
+			fEventSpeed = 2.0f;
+		break;
+		case 6:
+			PlaySoundAtEntity("growl", "03_amb_idle", "AreaGrunt_2", 0.3f, false);
+			SetPlayerMoveSpeedMul(0.8f);
+			SetPlayerRunSpeedMul(0.8f);
+			PlayGuiSound("react_breath", 0.6f);
+			fEventSpeed = 2.0f;
+		break;
+		case 7:
+			SetPlayerMoveSpeedMul(0.9f);
+			SetPlayerRunSpeedMul(0.9f);
+			PlayGuiSound("react_breath", 0.4f);
+			fEventSpeed = 1.0f;
+		break;
+		case 8:
+			SetPlayerMoveSpeedMul(1.0f);
+			SetPlayerRunSpeedMul(1.0f);
+			PlayGuiSound("react_breath", 0.2f);
+			FadeImageTrailTo(0.0f, 2.0f);
+		break;
+	}
+
+	if(GetLocalVarInt(sEvent) <= iMaxEventStep) AddTimer(sEvent, fEventSpeed, sEvent);
+}
+//END SECRET SHELF DOOR//
+/////////////////////////
+
+
+///////////////
+//BEGIN CLOUD//
+void CloudEffects(string &in asWhere, bool bLook)
+{
+	if(bLook) StartPlayerLookAt(asWhere, 0.75f, 0.75f, "");
+	
+	CreateParticleSystemAtEntity(asWhere, "ps_cloud_thing01.ps", asWhere, false);
+	FadeSepiaColorTo(0.5f, 0.025f);
+	FadeRadialBlurTo(0.1f, 0.025f);
+	SetRadialBlurStartDist(0.2f);
+	SetPlayerMoveSpeedMul(0.25f);
+	SetPlayerRunSpeedMul(0);
+	StartScreenShake(0.01f, 4, 2,2);
+	
+	AddTimer(asWhere, 0.05f, "TimerThing");
+	AddTimer("react1", 0.25f, "TimerThing");
+	AddTimer("thing1", 1.5f, "TimerThing");
+	AddTimer("thing2", 3.0f, "TimerThing");
+	AddTimer("thing3", 4.6f, "TimerThing");
+	AddTimer("thing4", 6.0f, "TimerThing");
+}
+void CollideCloudThing(string &in asParent, string &in asChild, int alState)
+{
+	if(asChild == "AreaCloudActivate_2")
+		CloudEffects("AreaCloudThing_2", true);
+	else if(asChild == "AreaCloudActivate_3")
+		CloudEffects("AreaDustScrape_3", false);
+	else if(asChild == "AreaCloudActivate_4")
+		CloudEffects("AreaDustScrape_8", false);
+	else if(asChild == "AreaCloudActivate_5")
+		CloudEffects("AreaCloudThing_5", true);
+		
+	/*DEBUG
+	 */
+	AddDebugMessage("Do cloud " + asChild, true);
+}
+void TimerThing(string &in asTimer)
+{	
+	PlaySoundAtEntity("clouds1", "03_cloud_swarm.snt", asTimer, 1, false);
+	SetPlayerMoveSpeedMul(0.9f);
+	SetPlayerRunSpeedMul(0.9f);
+		
+	if(asTimer == "thing1"){
+		SetPlayerMoveSpeedMul(0.7f);
+		SetPlayerRunSpeedMul(0.7f);
+	}
+	if(asTimer == "thing2"){
+		SetPlayerMoveSpeedMul(0.6f);
+		SetPlayerRunSpeedMul(0.6f);
+		PlaySoundAtEntity(asTimer, "react_breath.snt", "Player", 0.75f, false);
+		StopSound("clouds1", 3.5f);
+	}
+	if(asTimer == "thing3"){
+		SetPlayerMoveSpeedMul(0.8f);
+		SetPlayerRunSpeedMul(0.8f);
+		FadeSepiaColorTo(0, 0.1f);
+		FadeRadialBlurTo(0, 0.1f);
+		StopPlayerLookAt();
+	}
+	if(asTimer == "thing4"){
+		SetPlayerMoveSpeedMul(1);
+		SetPlayerRunSpeedMul(1);
+		PlaySoundAtEntity(asTimer, "react_breath.snt", "Player", 1.25f, false);
+	}
+	
+	if(asTimer == "react1"){
+		GiveSanityDamage(10, false);
+		PlaySoundAtEntity(asTimer, "react_scare.snt", "Player", 0.5f, false);
+		SetPlayerMoveSpeedMul(0.8f);
+		SetPlayerRunSpeedMul(0.8f);
+	}
+}
+//END CLOUD//
+/////////////
+
+
+/////////////////////
+//MISC MINOR EVENTS//
+/*If player moves an urn from a table it will break and release a dust cloud
+ */
+void CollideJarLeaveArea(string &in asParent, string &in asChild, int alState)
+{
+	SetPropHealth(asParent, 0);
+	
+	PlaySoundAtEntity("ghost_released", "03_in_a_bottle", "Player", 0, false);
+	
+	GiveSanityDamage(10, true);
+}
+
+/*Play a last piano piece on the way out and activate a last cloud thing
+ */
+void CollideLastPiano(string &in asParent, string &in asChild, int alState)
+{
+	PlaySoundAtEntity("SoundPiano3", "general_piano03.snt", "piano_1", 0.0f, false);
+	
+	PlaySoundAtEntity("growl", "03_amb_idle", "AreaGrunt_4", 0.0f, false);
+	
+	/*DEBUG
+	 */
+	AddDebugMessage("Play last piano", true);
+}
+
+/*Dripping blood at hole in the ceiling
+ */
+void TimerBloodDrop(string &in asTimer)
+{
+	if(asTimer == "bloodsound"){
+		PlaySoundAtEntity("bloddrop", "general_blood_drop", "AreaBloodDrop", 0, false);
+		AddTimer("blooddrop", 0.1f, "TimerBloodDrop");
+	}
+	else{ 
+		CreateParticleSystemAtEntity("PSblood", "ps_blood_drop.ps", "AreaBloodDrop_1", false);
+		AddTimer("bloodsound", 2.9f, "TimerBloodDrop");
+	}
+}
+
+/*Random ceiling particle and sound
+ */
+void TimerCrawl(string &in asTimer)
+{
+	int iCrawl = RandFloat(1, 8);	
+	float fCrawl = RandFloat(0.5f,6.5f);
+	
+	CreateParticleSystemAtEntity("crawlPS"+iCrawl, "ps_dust_falling_small.ps", "AreaDustScrape_"+iCrawl, false);
+	
+	PlaySoundAtEntity("crawlSound"+iCrawl, "03_wall_scratch_single.snt", "AreaDustScrape_"+iCrawl, 1.0f, false);
+	
+	AddTimer("crawl", 3.5f+fCrawl, "TimerCrawl");
+	
+	/*DEBUG
+	 */
+	AddDebugMessage("Now crawling in: "+iCrawl+" Next crawl in: "+(5.5f+fCrawl), true);
+}
+
+/*Music when readin villlage note
+ */
+void PickVillageNote(string &in entity, string &in type)
+{
+	PlayMusic("03_paper_village.ogg", false, 0.7f, 0, 10, false);
+}
+/////////////////
+/////////////////
+
+
+/////////////////////////
+//BEGIN THE BROKEN WALL//
+/* void InteractBrokenWall(string &in asEntity)
+{
+	PlayGuiSound("impact_rock_low3.ogg", 1.0f);
+	PlayGuiSound("15_rock_break", 0.7f);
+	
+	SetMessage("Ch01Level03", "BrokenWall", 0);
+	
+	AddTimer(asEntity, 2.0f, "TimerBrokenWall");
+}
+void TimerBrokenWall(string &in asTimer)
+{
+	SetEntityPlayerInteractCallback(asTimer, "InteractBrokenWall", true);
+}
+ */
+/*Give a hint on how to throw objects you hold
+ */	
+void CollideHint(string &in asParent, string &in asChild, int alState)
+{
+	GiveHint("ThrowHint", "Hints", "ThrowHint", 0);
+	
+	/*DEBUG
+	 */
+	AddDebugMessage("Collide!", true);
+}
+
+
+void PlayerInteractSecretPassage(string &in asEntity)
+{
+	AddLocalVarInt("PassageHitCount", 1);
+	AddTimer("TimerDecreaseHitCount", 0.5f, "TimerDecreaseHitCount");	
+	
+	if(GetTimerTimeLeft("PassageBreakMessagePaused")==0)
+	{
+		PlayGuiSound("impact_rock_low3.ogg", 1.0f);
+		PlayGuiSound("15_rock_break", 0.7f);
+	
+		SetMessage("Ch01Level03", "BrokenWall", 0);
+		
+		AddTimer("PassageBreakMessagePaused", 0.5f, "");
+	}
+	
+	int lInteractedCount = GetLocalVarInt("PassageHitCount");
+	
+	int lDebrisArea = RandInt(1, 4);
+	CreateParticleSystemAtEntity("PSPassageDebris"+lDebrisArea, "ps_dust_impact.ps", "PassageInteractDebris_"+lDebrisArea, false);
+	
+	AddDebugMessage("Adding debris PS to PassageInteractDebris_"+lDebrisArea, false);
+	
+	if(lInteractedCount==3)
+	{
+		SetPropHealth("mansionbase_secret_passage_1", 0);
+	}
+}
+
+void TimerDecreaseHitCount(string &in asTimer)
+{
+	AddLocalVarInt("PassageHitCount", -1);
+}
+
+//END THE BROKEN WALL//
+///////////////////////
+
+
+////////////////////////////////
+//BEGIN CAVEIN AT END OF LEVEL//
+/*Make the corridor cave in behind the Player
+*/
+void CollideCaveIn(string &in asParent, string &in asChild, int alState)
+{
+	SetPropActiveAndFade("cave_in_cave_in_*", true, 1.0f);
+	SetEntityActive("hanging_lantern_ceiling_7", false);
+	
+	CreateParticleSystemAtEntity("fogarea", "ps_area_fog_large", "AreaCaveIn", true);
+	CreateParticleSystemAtEntity("fogarea2", "ps_area_fog_large", "AreaCaveIn2", true);
+	CreateParticleSystemAtEntity("breakcave", "ps_break_mansionbase_wall", "AreaCaveIn", false);
+	
+	StartScreenShake(0.02f, 0.5f, 0.8f, 2.0f);
+
+	PlaySoundAtEntity("rumble", "general_rock_rumble_no3d.snt", "Player", 0.5f, true);
+	
+	AddTimer("1", 1.0f, "TimerCaveIn");
+	AddTimer("2", 0.7f, "TimerCaveIn");
+	AddTimer("3", 3.0f, "TimerCaveIn");
+	AddTimer("4", 5.0f, "TimerCaveIn");
+	
+	SetEntityActive("AreaCaveInQuest", true);
+	SetEntityActive("AreaQuestDone", true);
+	
+	SetEntityActive("AreaLookGrunt_1", true);
+	
+	SetEntityActive("AreaGruntSound03", true);
+	
+	//Lock a door so force the player path + add some confusion.
+	SetSwingDoorLocked("mansion_2", true, false);
+	SetEntityPlayerInteractCallback("mansion_2", "Interactmansion_2", true);
+	
+	//Fade out some lights to make corridor darker.
+	FadeLightTo("PointLight_4", 0,0,0,0, -1, 1);
+	FadeLightTo("PointLight_2", 0,0,0,0, -1, 1);
+}
+
+void Interactmansion_2(string &in asEntity)
+{
+	PlayGuiSound("locked_door", 0.7f);
+	SetMessage("Ch02Level16", "InteractLargeDoor", 0);
+	
+	AddTimer(asEntity, 1.0f, "TimerGruntDoorBackon");
+}
+void TimerGruntDoorBackon(string &in asTimer)
+{
+	SetEntityPlayerInteractCallback(asTimer, "Interactmansion_2", true);
+}
+
+/*Event timer for the cavein
+ */
+void TimerCaveIn(string &in asTimer)
+{
+	if(asTimer == "1"){
+		CreateParticleSystemAtEntity("cavein", "ps_break_cavein_local", "AreaCaveIn", false);
+		PlaySoundAtEntity("caveins", "explosion_rock_large", "cave_in_cave_in_1", 0.0f, false);
+	}
+	else if(asTimer == "2"){
+		PlayGuiSound("react_scare6", 1.0f);
+		GiveSanityDamage(10.0f, true);
+		PlayMusic("11_event_tree", false, 1.0f, 0.0f, 10, false);
+	}
+	else if(asTimer == "3"){
+		StopSound("rumble", 3.0f);
+		StopMusic(2.0f, 10);
+	}
+	else if(asTimer == "4"){
+		PlaySoundAtEntity("caveins", "15_rock_break", "cave_in_cave_in_1", 0.0f, false);
+		PlayGuiSound("react_breath.snt", 1.0f);	
+	}
+}
+
+/*If going to examine the cavein, give Quest
+ */
+void CollideCaveInQuest(string &in asParent, string &in asChild, int alState)
+{
+	AddQuest("03cavein", "03CaveIn");
+}
+
+/*When leaving the library, complete quest and activate some Grunt event areas
+ */
+void CollideQuestDone(string &in asParent, string &in asChild, int alState)
+{
+	CompleteQuest("03cavein", "03CaveIn");
+	
+	PlaySoundAtEntity("growl", "03_amb_idle", "AreaGrunt_3", 0.5f, false);
+	
+	SetEntityActive("AreaActivateLiveGrunt_1", true);
+	SetEntityActive("AreaActivateLiveGrunt_2", true);
+}
+
+
+//END CAVEIN AT END OF LEVEL//
+//////////////////////////////
+
+
+//////////////////////////////////////
+//START A GRUNT WALKING IN THE LEVEL//
+/*A grunt is shown going into another room when coming into the room, two different places but only 1 will be used
+ */
+void CollideActivateLiveGrunt(string &in asParent, string &in asChild, int alState)
+{
+	if(asChild == "AreaActivateLiveGrunt_1"){ 
+		SetEntityActive("servant_grunt_1", true);
+		SetEntityActive("AreaActivateLiveGrunt_2", false);
+	} else{
+		SetEntityActive("servant_grunt_2", true);
+		SetEntityActive("AreaActivateLiveGrunt_1", false);
+	}
+	
+	SetPlayerRunSpeedMul(0.9f);
+	SetPlayerMoveSpeedMul(0.9f);
+	
+	AddTimer("scare", 1.0f, "TimerGruntScare");
+	AddTimer("breath", 3.0f, "TimerGruntScare");
+}
+
+/*Give sanity damage on grunt activation
+ */
+void TimerGruntScare(string &in asTimer)
+{
+	if(asTimer == "breath"){
+		PlayGuiSound("react_breath", 0.6f);
+		SetPlayerRunSpeedMul(1.0f);
+		SetPlayerMoveSpeedMul(1.0f);
+		return;
+	}
+	
+	GiveSanityDamage(10.0f, true);
+	PlayGuiSound("react_scare6", 0.7f);
+	SetPlayerRunSpeedMul(0.8f);
+	SetPlayerMoveSpeedMul(0.8f);
+}
+
+/*Remove the grunt as soon as it is in another room and out of sight
+ */
+void CollideDisableLiveGrunt(string &in asParent, string &in asChild, int alState)
+{
+	SetEntityActive(asParent, false);
+}
+
+/*If player goes to examine cavein from the other way around, a grunt appears behind him
+ */
+void CollideJumpGrunt(string &in asParent, string &in asChild, int alState)
+{
+	if(alState == 1) SetEntityActive("AreaLookGrunt", true);
+	else SetEntityActive("AreaLookGrunt", false);
+}
+
+/*To make sure that grunt is only activated when looking away
+ */
+void LookAtGrunt(string &in asEntity, int alState)
+{
+	SetEntityActive("servant_grunt_3", true);
+	AddTimer("scare", 0.5f, "TimerGruntScare");
+}
+//END A GRUNT WALKING IN THE LEVEL//
+////////////////////////////////////
+
+
+//////////////////////////////////////
+//START GRUNT SOUNDS
+
+void CollideGruntSound01(string &in asParent, string &in asChild, int alState)
+{
+	PlaySoundAtEntity("grunt_idle","amb_idle_whimp.snt","AreaDustScrape_3",0,false);
+}
+
+void CollideGruntSound02(string &in asParent, string &in asChild, int alState)
+{
+	PlaySoundAtEntity("grunt_idle","amb_idle_whimp.snt","AreaCaveIn2",0,false);
+}
+
+void CollideGruntSound03(string &in asParent, string &in asChild, int alState)
+{
+	PlaySoundAtEntity("grunt_idle","amb_idle_whimp.snt","AreaGruntSoundBehind",0,false);
+}
+
+void TimerIntroEnemy(string &in asTimer)
+{
+	PlaySoundAtEntity("enemy", "enemy/grunt/amb_idle",  "AreaDustScrape_5", 0, false);
+}
+
+//END GRUNT SOUNDS
+//////////////////////////////////////
+
+
+////////////////////////////
+// Run first time starting map
+void OnStart()
+{
+	SetMapDisplayNameEntry("Archives");
+	
+	//----COLLIDE CALLBACKS----//
+	for(int i=1;i<=3;i++) AddEntityCollideCallback("SecretBook_"+i, "AreaSecretBook_"+i, "CollideSecretBook", false, 0);	//Pull books to reveal room
+	AddEntityCollideCallback("Player", "AreaTriggerManyBook", "CollideBeginManyBook", true, 1);	//Makes the shelf bang and books fly
+	AddEntityCollideCallback("Player", "AreaTriggerPiano", "CollideBeginPiano", true, 1);	//Some distant piano is playing and a book falls to the ground
+	AddEntityCollideCallback("Player", "SlowArea_1", "CollideSlowArea", false, 0);	
+	AddEntityCollideCallback("Player", "AreaSecondPiano", "CollideBeginPiano", true, 1);
+	AddEntityCollideCallback("Player", "AreaClosePiano", "CollideCloseLid", true, 1);
+	AddEntityCollideCallback("vase02_ghost_1", "AreaJar", "CollideJarLeaveArea", true, -1);
+	AddEntityCollideCallback("Player", "AreaHalfToOrb", "CollideOrb", true, 1);
+	AddEntityCollideCallback("Player", "AreaCloseToOrb", "CollideOrb", true, 1);
+	AddEntityCollideCallback("chair_ghost", "mansionbase_secret_passage_1", "CollideHint", true, 1);			
+	for(int i=1;i<=7;i++) AddEntityCollideCallback("rock_small_"+i, "mansionbase_secret_passage_1", "CollideHint", true, 1);
+	for(int i=9;i<=12;i++) AddEntityCollideCallback("chair_nice01_"+i, "mansionbase_secret_passage_1", "CollideHint", true, 1);
+	
+	AddEntityCollideCallback("Player", "AreaCloudActivate_5", "CollideCaveIn", true, 1);
+	AddEntityCollideCallback("Player", "AreaCaveInQuest", "CollideCaveInQuest", true, 1);
+	AddEntityCollideCallback("Player", "AreaQuestDone", "CollideQuestDone", true, 1);
+	
+	AddEntityCollideCallback("Player", "AreaActivateLiveGrunt_1", "CollideActivateLiveGrunt", true, 1);
+	AddEntityCollideCallback("Player", "AreaActivateLiveGrunt_2", "CollideActivateLiveGrunt", true, 1);
+	
+	AddEntityCollideCallback("Player", "AreaGruntSound01", "CollideGruntSound01", true, 1);
+	AddEntityCollideCallback("Player", "AreaGruntSound02", "CollideGruntSound02", true, 1);
+	AddEntityCollideCallback("Player", "AreaGruntSound03", "CollideGruntSound03", true, 1);
+	
+	AddEntityCollideCallback("servant_grunt_1", "AreaActivateLiveGrunt_3", "CollideDisableLiveGrunt", true, 1);
+	AddEntityCollideCallback("servant_grunt_2", "AreaActivateLiveGrunt_3", "CollideDisableLiveGrunt", true, 1);
+	
+	AddEntityCollideCallback("Player", "AreaLookGrunt_1", "CollideJumpGrunt", false, 0);
+	
+	//----PLAYER INTERACTION----//
+	SetEntityPlayerInteractCallback("PassageInteractArea", "PlayerInteractSecretPassage", false);
+	
+	//----PATROL FOR MONSTERS----//
+	AddEnemyPatrolNode("servant_grunt_1", "PathNodeArea_5", 0.0f, "");
+	AddEnemyPatrolNode("servant_grunt_2", "PathNodeArea_10", 0.0f, "");
+	AddEnemyPatrolNode("servant_grunt_3", "PathNodeArea_14", 0.0f, "");
+	
+	
+	//NOT IN USE 
+	//for(int i=2;i<=5;i++)  AddEntityCollideCallback("Player", "AreaCloudActivate_"+i, "CollideCloudThing", true, 1);
+	//----INTRO----//
+	//CloudEffects("AreaCloudThing_1", true);
+	
+	SetEntityCallbackFunc("note_paper01_2", "PickVillageNote");
+	
+	//SetSkyBoxActive(true);
+	//SetSkyBoxColor(0.25, 0.30, 0.35, 1);
+	
+	//----ENTITY INIT----//
+	SetPropHealth("display_3", 0);
+	
+	PlaySoundAtEntity("ambs1", "03_amb.snt", "AmbSounds", 4.0f, true);
+	PlaySoundAtEntity("ambs2", "03_amb_library.snt", "AmbSounds", 4.0f, true);
+	PlaySoundAtEntity("ambs3", "03_insects.snt", "AmbSounds", 4.0f, true);
+	
+	//----CONNECT CALLBACKS----//
+	/*Secret hole in wall
+	 */
+	ConnectEntities("secret_painting",		//Name of connection
+		"lever_small01", 	//Parent entity (Affects)
+		"painting_large03_1",	//Child entity 	(Affected) 
+		false,		//Invert the state sent
+		1, 		//States used (0=both), checked before invertion.
+		"");	//callback
+
+	
+	//----QUEST INIT----//
+	SetNumberOfQuestsInMap(1);
+	
+	//----TIMER INIT----//
+	AddTimer("crawl", 0.5f, "TimerCrawl");
+	AddTimer("blooddrop", 1, "TimerBloodDrop");
+	AddTimer("enemyS", 4.0f, "TimerIntroEnemy");
+	
+	//----VARIABLES----//
+	SetLocalVarInt("VoiceResume", 0);
+	SetGlobalVarInt("PlayerBeenInLevel03",1);
+	
+	//----DEBUG----//
+	if(ScriptDebugOn())
+	{
+		GiveItemFromFile("lantern", "lantern.ent");
+		for(int i=0;i<10;i++) GiveItemFromFile("tinderbox_"+i, "tinderbox.ent");
+		
+		//CollideCaveIn("", "", 1);	//to test cavein
+		
+		AddLocalVarInt("diary", 2);	//Activate flashback on first diary pickup
+		//AddTimer("TimerFlashBack", 0.1f, "TimerFlashBack");	//To use when tetsing with start loction _Flash
+		//SetPlayerLampOil(15);	//To test always give oil during flashback
+	}
+}
+
+////////////////////////////
+// Run when entering map
+void OnEnter()
+{	
+	//----PRELOADING----//
+	PreloadSound("scare_thump_flash"); PreloadSound("03_creak"); PreloadSound("react_breath"); PreloadSound("03_rock_amb"); 
+	PreloadSound("03_loop"); PreloadSound("03_orb_loop"); PreloadSound("03_orb_loop_loud"); PreloadSound("player_bodyfall"); 
+	PreloadSound("03_orb"); PreloadSound("03_amb"); PreloadSound("03_insects"); PreloadSound("03_amb_library"); 
+	PreloadSound("react_breath_slow"); PreloadSound("03_pound"); PreloadSound("react_pant"); PreloadSound("player_climb"); 
+	PreloadSound("03_drag_dirt"); PreloadSound("03_lift_rock"); PreloadSound("03_crew_talk"); PreloadSound("03_waking_up"); 
+	PreloadSound("03_rock_move"); PreloadSound("react_sigh"); PreloadSound("scare_scratch"); PreloadSound("break_wood"); 
+	PreloadSound("scare_male_terrified"); PreloadSound("scare_thump_flash"); PreloadSound("general_piano02"); PreloadSound("general_wind_whirl"); 
+    PreloadSound("scare_wall_scratch_single"); PreloadSound("general_piano01"); PreloadSound("gameplay_tick"); PreloadSound("lock_door"); 
+	PreloadSound("03_cloud_swarm"); PreloadSound("03_in_a_bottle"); PreloadSound("general_piano03"); PreloadSound("general_blood_drop"); 
+                                      
+	PreloadParticleSystem("ps_break_wood"); PreloadParticleSystem("ps_dust_piano"); PreloadParticleSystem("ps_dust_impact");
+	PreloadParticleSystem("ps_cloud_thing01"); PreloadParticleSystem("ps_blood_drop"); PreloadParticleSystem("ps_dust_falling_small");
+	PreloadParticleSystem("ps_orb_on_player"); 
+	      
+	     
+	//----AUDIO----//
+	StopMusic(4.0f, 0);
+	//PlayMusic("amb_soft_mood", true, 1, 0.1f, 0, true);
+	AutoSave();
+}
+
+////////////////////////////
+// Run when leaving map
+void OnLeave()
+{
+	//////////////////////
+	//Load Screen Setup
+	SetupLoadScreen("LoadingText", "Ch01_Diary01_", 6, "game_loading_catacombs.jpg");
+}

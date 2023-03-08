@@ -1,0 +1,556 @@
+<Level>
+    <MapData FogActive="true" FogColor="0.1 0.11 0.1 0.5" FogCulling="true" FogEnd="25" FogFalloffExp="1" FogStart="0" GlobalDecalMaxTris="300" Name="" SkyBoxActive="false" SkyBoxColor="1 1 1 1" SkyBoxTexture="../../../../../../">
+        <MapContents>
+            <FileIndex_StaticObjects NumOfFiles="31">
+                <File Id="0" Path="static_objects/castlebase/wall/default.dae" />
+                <File Id="1" Path="static_objects/castlebase/wall/door_frame.dae" />
+                <File Id="2" Path="static_objects/castlebase/wall/door_way.dae" />
+                <File Id="3" Path="static_objects/castlebase/wall/default_extension.dae" />
+                <File Id="4" Path="static_objects/castlebase/wall/window02_blue.dae" />
+                <File Id="5" Path="static_objects/castlebase/wall/window_blue.dae" />
+                <File Id="6" Path="static_objects/castlebase/ceiling/corner_concave.dae" />
+                <File Id="7" Path="static_objects/castlebase/ceiling/concave.dae" />
+                <File Id="8" Path="static_objects/castlebase/ceiling/corridor.dae" />
+                <File Id="9" Path="static_objects/castlebase/wall/welder.dae" />
+                <File Id="10" Path="static_objects/castlebase/wall/welder_convex.dae" />
+                <File Id="11" Path="static_objects/castlebase/pillar/plain_decayed2.dae" />
+                <File Id="12" Path="static_objects/castlebase/pillar/plain_short.dae" />
+                <File Id="13" Path="static_objects/castlebase/pillar/plain_decayed1.dae" />
+                <File Id="14" Path="static_objects/decals/dirt_floor01.dae" />
+                <File Id="15" Path="static_objects/castlebase/wall/default_broken01.dae" />
+                <File Id="16" Path="static_objects/debris/wood/plank02_4.5m.dae" />
+                <File Id="17" Path="static_objects/debris/hole/rock_straight4m.dae" />
+                <File Id="18" Path="static_objects/debris/hole/rock_straight2m.dae" />
+                <File Id="19" Path="static_objects/debris/hole/rock_Uconvex.dae" />
+                <File Id="20" Path="static_objects/decals/pebbles04.dae" />
+                <File Id="21" Path="static_objects/debris/hole/rock_Uconcave.dae" />
+                <File Id="22" Path="static_objects/decals/paper_pile.dae" />
+                <File Id="23" Path="static_objects/debris/hole/rock_Lconvex.dae" />
+                <File Id="24" Path="static_objects/debris/hole/rock_Lconcave.dae" />
+                <File Id="25" Path="static_objects/castlebase/stairs/default.dae" />
+                <File Id="26" Path="static_objects/castlebase/stairs/welder.dae" />
+                <File Id="27" Path="static_objects/decals/pebbles03.dae" />
+                <File Id="28" Path="static_objects/decals/moist_wall01.dae" />
+                <File Id="29" Path="static_objects/debris/wood/plank_2.5m_broken.dae" />
+                <File Id="30" Path="static_objects/castlebase/wall/default_short.dae" />
+            </FileIndex_StaticObjects>
+            <FileIndex_Entities NumOfFiles="29">
+                <File Id="0" Path="entities/furniture/table_nice_wood01/table_nice_wood01.ent" />
+                <File Id="1" Path="entities/furniture/chair_wood/chair_wood.ent" />
+                <File Id="2" Path="entities/storage/shelf_no_back/shelf_no_back.ent" />
+                <File Id="3" Path="entities/storage/shelf02/shelf02.ent" />
+                <File Id="4" Path="entities/item/potion_sanity/potion_sanity.ent" />
+                <File Id="5" Path="entities/ornament/book_row02/book_row02.ent" />
+                <File Id="6" Path="entities/ornament/book_row03/book_row03.ent" />
+                <File Id="7" Path="entities/lamp/torch_static01/torch_static01.ent" />
+                <File Id="8" Path="entities/ornament/pot_plant_small01/pot_plant_small01.ent" />
+                <File Id="9" Path="entities/technical/commentary_icon/commentary_icon.ent" />
+                <File Id="10" Path="entities/desktop/paperpile02/paperpile02.ent" />
+                <File Id="11" Path="entities/item/tinderbox/tinderbox.ent" />
+                <File Id="12" Path="entities/ornament/tome_open01/tome_open01.ent" />
+                <File Id="13" Path="entities/ornament/book_row01/book_row01.ent" />
+                <File Id="14" Path="entities/ornament/sketch_castle/sketch_roll_row02.ent" />
+                <File Id="15" Path="entities/door/castle/castle.ent" />
+                <File Id="16" Path="entities/ornament/shield01/shield01.ent" />
+                <File Id="17" Path="entities/ornament/banner01/banner01.ent" />
+                <File Id="18" Path="entities/container/wood_box01/wood_box01.ent" />
+                <File Id="19" Path="entities/desktop/paper01/paper01.ent" />
+                <File Id="20" Path="entities/critter/cockroach/cockroach.ent" />
+                <File Id="21" Path="entities/desktop/paperpile01/paperpile01.ent" />
+                <File Id="22" Path="entities/desktop/paperpile03/paperpile03.ent" />
+                <File Id="23" Path="entities/ornament/book01/book01.ent" />
+                <File Id="24" Path="entities/ornament/book02/book02.ent" />
+                <File Id="25" Path="entities/ornament/book03/book03.ent" />
+                <File Id="26" Path="entities/gameplay/treasure_chest/treasure_chest.ent" />
+                <File Id="27" Path="entities/ornament/book_pile02/book_pile02.ent" />
+                <File Id="28" Path="entities/door/level_wood/level_wood.ent" />
+            </FileIndex_Entities>
+            <FileIndex_Decals NumOfFiles="0" />
+            <StaticObjects />
+            <Primitives />
+            <Decals />
+            <Entities>
+                <Sound Active="true" Group="0" ID="4994" MaxDistance="15" MinDistance="6" Name="amb_3" Rotation="0 0 0" Scale="1 1 1" SoundEntityFile="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../sounds/general/general_rain_m.snt" Tag="" UseDefault="false" Volume="1" WorldPos="5.84396 -0.862321 -14.5237" />
+                <Billboard Active="true" BillboardColor="0.4 0.45 0.4 1" BillboardOffset="0" BillboardSize="4 2" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="2268" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_15" Rotation="0 0 0" Tag="" WorldPos="6.25853 -0.091326 -12.3824" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4699" Mesh="" Name="AreaWallScrape_6" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="7.0121 -0.251065 -12.62">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="4698" Mesh="" Name="AreaWallScrape_5" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-5.85411 -0.251065 -16.1165">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust.ps" Group="0" ID="4716" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_33" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="5.57055 -0.00106502 -11.523" />
+                <SpotLight Active="true" Aspect="2" CastShadows="true" DiffuseColor="0.7 0.8 0.75 0.7" FOV="0.872665" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="lights/gobo_castlebase_window02.dds" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1898" Name="SpotLight_14" NearClipPlane="0.1" Radius="5" Rotation="-2.00713 2.53518e-006 -2.53518e-006" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" Tag="" WorldPos="6.32055 0.498935 -10.523" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust.ps" Group="0" ID="4715" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_32" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="7.07055 -0.251065 -11.523" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.525 0.675 0.65 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1897" Name="PointLight_19" Radius="4" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 -0.00106502 -10.773" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="4645" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="2" MinFadeDistanceStart="6" Name="ParticleSystem_23" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.32055 -0.251065 -11.273" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4692" Mesh="" Name="AreaDustBoom_3" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="9.57055 -0.501065 -11.773">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5046" Name="extra_5" Radius="5" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-3.42945 -0.751065 -12.523" />
+                <PointLight Active="false" CastShadows="false" DiffuseColor="0.325 0.275 0.15 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="4501" Name="LightOff_2" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-3.17945 -0.751065 -12.273" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1899" Name="PointLight_23" Radius="7" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 -0.251065 -9.02296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4707" Mesh="" Name="AreaBeginWind" Rotation="3.1381 1.30643 3.13822" Scale="1 1 1" Tag="" WorldPos="-5.39388 -2.25107 -16.8338">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.4 0.5 0.6 1" BillboardOffset="0" BillboardSize="9 9" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5924" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_white_halo.mat" Name="Billboard_55" Rotation="-1.5708 0 0" Tag="" WorldPos="6.57055 4.45067 -2.02296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4691" Mesh="" Name="AreaDustBoom_2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="0.57055 -0.251065 -9.02296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2111" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_5" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-1.75742 -2.68307 -14.7479" />
+                <Billboard Active="true" BillboardColor="0.4 0.5 0.6 1" BillboardOffset="0" BillboardSize="9 9" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5454" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_white_halo.mat" Name="Billboard_54" Rotation="-1.5708 0 0" Tag="" WorldPos="6.57055 4.01569 -2.02296" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5045" Name="extra_4" Radius="4" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-2.92945 -0.751065 -10.023" />
+                <Area Active="true" AreaType="Script" Group="0" ID="1907" Mesh="" Name="AreaTriggerDoor_1" Rotation="0 0 0" Scale="5.75 4.5 0.25" Tag="" WorldPos="-2.42945 -0.751065 -9.30296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="2106" Mesh="" Name="AreaScratch_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="12.7308 -0.287583 -8.94736">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.4 0.5 0.6 1" BillboardOffset="0" BillboardSize="7 7" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5453" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_white_halo.mat" Name="Billboard_4" Rotation="-1.5708 0 0" Tag="" WorldPos="6.57055 3.24769 -2.02296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4690" Mesh="" Name="AreaDustBoom_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="12.0705 -0.751065 -9.08716">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5047" Name="extra_6" Radius="5" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-10.9295 -0.751065 -14.023" />
+                <PointLight Active="false" CastShadows="false" DiffuseColor="0.325 0.275 0.15 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="4073" Name="LightOff_1" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-10.9295 -0.751065 -13.273" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2109" Mesh="" Name="AreaScratch_4" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-0.35451 -0.287583 -6.47616">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5445" Name="PointLight_41" Radius="4" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 2.74769 -1.77296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4693" Mesh="" Name="AreaDustBoom_4" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="5.57055 -2.75107 -9.52296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.15 0.2 0.2 0.15" BillboardOffset="0" BillboardSize="4.5 8" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5452" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_lightblue_lightray.mat" Name="Billboard_53" Rotation="3.14159 -0.421031 -3.14159" Tag="" WorldPos="6.32055 1.8701 -1.77296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2093" Mesh="" Name="AreaGhostStep_6" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="5.6253 -2.69881 -8.69036">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="2092" Mesh="" Name="AreaGhostStep_5" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.09256 -2.69881 -8.55186">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.15 0.2 0.2 0.15" BillboardOffset="0" BillboardSize="4.5 8" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5449" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_lightblue_lightray.mat" Name="Billboard_12" Rotation="-5.07034e-006 -1.14976 -2.24546e-011" Tag="" WorldPos="6.32055 1.6201 -1.77296" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2117" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_11" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="10.4447 -2.6404 -9.00626" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5043" Name="extra_2" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="17.3205 -0.751065 -8.77296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2091" Mesh="" Name="AreaGhostStep_4" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.14023 -2.69881 -8.07886">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="2090" Mesh="" Name="AreaGhostStep_3" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.88397 -2.69881 -8.11896">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.15 0.2 0.2 0.15" BillboardOffset="0" BillboardSize="4.5 8" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5450" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_lightblue_lightray.mat" Name="Billboard_51" Rotation="-3.14159 0.364366 -3.14159" Tag="" WorldPos="6.32055 1.3701 -1.77296" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.125 0.408 0.605 0.276" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5473" Name="PointLight_38" Radius="3" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.14064 1.45184 -1.64246" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4694" Mesh="" Name="AreaWallScrape_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="0.41204 -0.251065 -4.01146">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.15 0.2 0.2 0.15" BillboardOffset="0" BillboardSize="4.5 8" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0.3 0.3 0.3" ID="5451" IsHalo="false" MaterialFile="E:/lux/redist/billboards/bb_lightblue_lightray.mat" Name="Billboard_52" Rotation="3.14159 -1.20643 -3.14159" Tag="" WorldPos="6.32055 1.1201 -1.77296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2089" Mesh="" Name="AreaGhostStep_2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.83959 -2.69881 -7.63106">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="2088" Mesh="" Name="AreaGhostStep_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="7.5157 -2.69881 -7.65636">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust_large.ps" Group="0" ID="5472" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_31" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.32055 0.58453 -2.07546" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4695" Mesh="" Name="AreaWallScrape_2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="12.2289 -0.251065 -4.01146">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2112" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_6" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-12.3692 -2.68307 -13.4104" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5042" Name="extra_1" Radius="5" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="15.9083 -0.751065 -5.42166" />
+                <Area Active="true" AreaType="PlayerStart" Group="0" ID="151" Mesh="" Name="PlayerStartArea_1" Rotation="-2.53518e-006 1.5708 -2.53518e-006" Scale="1 1 1" Tag="" WorldPos="-11.6795 -2.75107 -12.273">
+                    <UserVariables />
+                </Area>
+                <Billboard Active="true" BillboardColor="0.3 0.35 0.3 1" BillboardOffset="0" BillboardSize="3.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="1971" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_11" Rotation="-1.57079 1.57045 3.14159" Tag="" WorldPos="-11.0651 1.65901 -3.46436" />
+                <PointLight Active="false" CastShadows="false" DiffuseColor="0.325 0.275 0.15 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="4504" Name="LightOff_3" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-3.17945 -0.751065 -2.52296" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4902" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_66" Rotation="0 0 0" Tag="" WorldPos="-10.8161 1.17286 -3.32386" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.125 0.175 0.15 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="4980" Name="PointLight_32" Radius="7" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 -0.251065 -0.772961" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2113" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_7" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-3.77233 -2.68307 -5.54386" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4897" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_62" Rotation="0 0 0" Tag="" WorldPos="-11.0488 0.720505 -3.82076" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5044" Name="extra_3" Radius="4" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-2.92945 -0.751065 -2.02296" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4544" Mesh="" Name="AreaGhostWind" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.32055 -2.75107 -3.77296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4904" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_71" Rotation="0 0 0" Tag="" WorldPos="-11.2353 1.17286 -2.80416" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4903" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_69" Rotation="0 0 0" Tag="" WorldPos="-11.2353 0.664095 -3.32386" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="4750" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="1.5" MinFadeDistanceStart="6" Name="ParticleSystem_19" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.5673 1.17708 -2.83686" />
+                <Billboard Active="true" BillboardColor="1 1 1 1" BillboardOffset="0" BillboardSize="8 8" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4197" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_147" Rotation="-1.57079 1.5708 3.14159" Tag="" WorldPos="-11.6923 2.25928 -1.48366" />
+                <ParticleSystem Active="true" Color="0.621 0.707 0.793 0.724" FadeAtDistance="true" File="ps_area_fog.ps" Group="0" ID="5475" MaxFadeDistanceEnd="13" MaxFadeDistanceStart="10" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_25" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="5.9118 -1.42522 -1.34096" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4905" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_73" Rotation="0 0 0" Tag="" WorldPos="-12.0415 1.17286 -2.80416" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.211 0.597 0.674 0.587" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5474" Name="PointLight_42" Radius="3" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.14064 -1.85529 -1.64246" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust_large.ps" Group="0" ID="4747" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_36" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.238 0.453085 -2.98866" />
+                <Billboard Active="true" BillboardColor="0.3 0.35 0.3 1" BillboardOffset="0" BillboardSize="3.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="1970" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_10" Rotation="-1.57079 1.57045 3.14159" Tag="" WorldPos="-11.992 1.65901 -1.82076" />
+                <Sound Active="true" Group="0" ID="4995" MaxDistance="14" MinDistance="7" Name="amb_4" Rotation="0 0 0" Scale="1 1 1" SoundEntityFile="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../sounds/general/general_rain_m.snt" Tag="" UseDefault="false" Volume="1" WorldPos="-11.4308 2.73007 -0.12236" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2118" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_12" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="21.7943 -2.6404 -9.00626" />
+                <Area Active="true" AreaType="PlayerStart" Group="0" ID="3252" Mesh="" Name="PlayerStartArea_x2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="22.5705 -2.75107 -9.77296">
+                    <UserVariables />
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 0.9 1" FadeAtDistance="true" File="ps_dust_falling.ps" Group="0" ID="2343" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="2" MinFadeDistanceStart="10" Name="ParticleSystem_14" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.6795 1.24893 -1.52296" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4906" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_74" Rotation="0 0 0" Tag="" WorldPos="-11.9109 0.662715 -2.29506" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4908" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_76" Rotation="0 0 0" Tag="" WorldPos="-12.1957 1.17286 -1.72696" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4910" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_78" Rotation="0 0 0" Tag="" WorldPos="-11.846 1.34459 -1.24866" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2116" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_10" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="2.24733 -2.68307 -1.63076" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.425 0.475 0.45 0" FalloffMap="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../light_falloff_short_fade.tga" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1968" Name="PointLight_31" Radius="4" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-11.4734 1.42651 -0.75836" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2108" Mesh="" Name="AreaScratch_3" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-0.35451 -0.287583 1.42574">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4909" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_77" Rotation="0 0 0" Tag="" WorldPos="-12.1957 1.17286 -1.24866" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4907" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_75" Rotation="0 0 0" Tag="" WorldPos="-11.8635 0.626915 -1.72696" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4503" Mesh="" Name="AreaDoor_3" Rotation="3.14159 -1.5708 3.14159" Scale="1 1 1" Tag="" WorldPos="-2.17945 -2.25107 -1.27296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4915" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_83" Rotation="0 0 0" Tag="" WorldPos="-9.99364 1.17286 0.338339" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4914" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_82" Rotation="0 0 0" Tag="" WorldPos="-10.3074 0.894415 -0.145061" />
+                <Billboard Active="true" BillboardColor="0.3 0.35 0.3 1" BillboardOffset="0" BillboardSize="4 5.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="1969" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_9" Rotation="-1.57079 1.5708 3.14159" Tag="" WorldPos="-10.8013 1.65901 0.518339" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4913" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_81" Rotation="0 0 0" Tag="" WorldPos="-11.067 1.17286 -0.145061" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4916" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_84" Rotation="0 0 0" Tag="" WorldPos="-10.5221 1.17286 0.338339" />
+                <Area Active="true" AreaType="Script" Group="0" ID="2095" Mesh="" Name="AreaTriggerGhost" Rotation="0 0 0" Scale="11.637 4.5 0.25" Tag="" WorldPos="6.32055 -0.751065 1.97704">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="2107" Mesh="" Name="AreaScratch_2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="12.7308 -0.287583 1.42574">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="1972" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="1.5" MinFadeDistanceStart="6" Name="ParticleSystem_4" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-10.9745 1.23972 0.37224" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4912" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_80" Rotation="0 0 0" Tag="" WorldPos="-12.1398 1.17286 -0.145061" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust_large.ps" Group="0" ID="4718" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_35" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.9295 0.095243 -1.33426" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4919" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_87" Rotation="0 0 0" Tag="" WorldPos="-10.9186 1.43936 0.93754" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4911" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_79" Rotation="0 0 0" Tag="" WorldPos="-12.0329 0.504395 -0.708961" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4918" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_86" Rotation="0 0 0" Tag="" WorldPos="-10.159 0.867085 0.93754" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4651" Mesh="" Name="AreaFeet_1" Rotation="-3.14159 1.5708 3.14159" Scale="1 1 1" Tag="" WorldPos="-9.67945 -3.50107 -4.77296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <SpotLight Active="true" Aspect="1" CastShadows="true" DiffuseColor="0.8 0.9 0.85 0.7" FOV="1.5708" FalloffMap="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../light_falloff_short_fade.tga" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="lights/gobo_wood_planks.dds" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1967" Name="SpotLight_18" NearClipPlane="0.1" Radius="6" Rotation="-1.57079 1.5708 -2.53518e-006" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" Tag="" WorldPos="-11.0744 0.157225 -0.0686607" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="4749" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="1.5" MinFadeDistanceStart="6" Name="ParticleSystem_16" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.8298 -0.689378 -1.58856" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4917" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_85" Rotation="0 0 0" Tag="" WorldPos="-11.826 0.638305 0.338339" />
+                <Billboard Active="true" BillboardColor="0.1 0.125 0.1 1" BillboardOffset="0" BillboardSize="0.25 4" BillboardType="Axis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4920" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_88" Rotation="0 0 0" Tag="" WorldPos="-11.9914 1.17286 0.93754" />
+                <BoxLight Active="true" BlendFunc="0" CastShadows="false" DiffuseColor="0 0 0 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="2344" Name="BoxLight_1" Radius="1" Rotation="0 0 0" Scale="12.5 8 17" ShadowResolution="High" ShadowsAffectDynamic="false" ShadowsAffectStatic="false" Size="12.5 8 17" Tag="" WorldPos="-11.9295 -1.00107 -1.52296" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_large.ps" Group="0" ID="1895" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="3" MinFadeDistanceStart="10" Name="ParticleSystem_3" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-10.6795 -3.25107 -3.77296" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="4748" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="1.5" MinFadeDistanceStart="6" Name="ParticleSystem_15" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.5426 0.070268 0.37224" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust_large.ps" Group="0" ID="4717" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_34" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-11.4295 0.248935 0.727039" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4502" Mesh="" Name="AreaDoor_2" Rotation="-2.53518e-006 1.5708 -2.53518e-006" Scale="1 1 1" Tag="" WorldPos="-2.17945 -2.25107 1.22704">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="1930" Mesh="" Name="AreaBeginSwirl" Rotation="-3.14159 1.5708 3.14159" Scale="15.5994 5.6 2.5" Tag="" WorldPos="-13.1795 -1.15056 -2.00616">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="1909" Mesh="" Name="AreaDoor_1" Rotation="3.14159 2.53518e-006 3.14159" Scale="1 1 1" Tag="" WorldPos="-7.05599 -2.34883 -0.23946">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Area Active="true" AreaType="Script" Group="0" ID="4697" Mesh="" Name="AreaWallScrape_4" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-5.85411 -0.251065 2.84064">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_large.ps" Group="0" ID="1894" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="3" MinFadeDistanceStart="10" Name="ParticleSystem_2" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-14.6795 -3.25107 -5.77296" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1933" Name="PointLight_30" Radius="10" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-13.6795 -1.50107 -1.52296" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2119" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_13" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="17.461 -2.6404 -0.10696" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4696" Mesh="" Name="AreaWallScrape_3" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="18.5215 -0.251065 2.84064">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <PointLight Active="false" CastShadows="false" DiffuseColor="0.225 0.175 0.05 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5028" Name="LightOff_4" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-2.98015 -0.751065 4.74504" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2115" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_9" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="12.2139 -2.68307 3.58094" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1906" Name="PointLight_27" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 -0.751065 6.72704" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.025 0.075 0.05 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1932" Name="PointLight_29" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-1.92945 -0.751065 6.47704" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5757" Name="PointLight_37" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-1.67945 -0.751065 6.72704" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4652" Mesh="" Name="AreaFeet_2" Rotation="-3.14159 1.5708 3.14159" Scale="1 1 1" Tag="" WorldPos="-15.1795 -3.50107 -1.27296">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.325 0.375 0.35 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5758" Name="PointLight_43" Radius="6" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="14.3205 -0.751065 6.72704" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.35 5.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4513" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_44" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="6.17584 -0.538561 8.30934" />
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4512" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_43" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="5.9327 -0.538561 8.36754" />
+                <Billboard Active="true" BillboardColor="0.25 0.35 0.45 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4514" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_45" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="6.17584 -0.788561 8.30934" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4511" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_42" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="5.9327 -0.788561 8.36754" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4509" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_40" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="5.68957 -0.788561 8.42574" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.35 5.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5723" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_57" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="-1.67945 -0.501065 8.22704" />
+                <Area Active="true" AreaType="PlayerStart" Group="0" ID="2096" Mesh="" Name="PlayerStartArea_x1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.36061 -2.75289 6.38194">
+                    <UserVariables />
+                </Area>
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4518" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_49" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="6.41898 -1.03856 8.25124" />
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.5 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4515" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_46" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="6.17584 -1.03856 8.30934" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4510" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_41" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="5.9327 -1.03856 8.36754" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4508" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_39" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="5.68957 -1.03856 8.42574" />
+                <Billboard Active="true" BillboardColor="0.25 0.35 0.45 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5726" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_60" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="-1.67945 -0.751065 8.22704" />
+                <SpotLight Active="true" Aspect="1.2" CastShadows="true" DiffuseColor="0.7 0.8 0.75 0.7" FOV="0.872665" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="lights/gobo_castlebase_window.dds" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1900" Name="SpotLight_15" NearClipPlane="0.1" Radius="5" Rotation="0.785398 0 3.14159" Scale="1 1 1" ShadowResolution="Medium" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" Tag="" WorldPos="6.07055 -0.751065 8.72704" />
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5722" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_56" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="-1.92945 -0.501065 8.47704" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust.ps" Group="0" ID="4713" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_30" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.32055 -0.501065 8.97704" />
+                <ParticleSystem Active="true" Color="0.7 0.75 0.85 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="4646" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="2" MinFadeDistanceStart="6" Name="ParticleSystem_24" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="6.32055 -0.251065 9.22704" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.525 0.675 0.65 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="1901" Name="PointLight_24" Radius="3" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="6.32055 -0.251065 9.22884" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4517" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_48" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="6.41898 -1.28856 8.25124" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4516" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_47" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="6.17584 -1.28856 8.30934" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.42 0.419 0.59 0.311" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5114" Name="PointLight_39" Radius="1" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-16.2155 -2.92453 -0.0811615" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5731" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_67" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="-1.42945 -1.00107 8.22704" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4653" Mesh="" Name="AreaFeet_3" Rotation="-3.14159 1.5708 3.14159" Scale="1 1 1" Tag="" WorldPos="-8.17945 -3.25107 3.97704">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.5 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5729" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_64" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="-1.67945 -1.00107 8.22704" />
+                <Billboard Active="true" BillboardColor="0.15 0.25 0.35 1" BillboardOffset="0" BillboardSize="0.35 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="4507" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_38" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="5.68957 -1.28856 8.42574" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5725" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_59" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="-1.92945 -0.751065 8.47704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5724" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_58" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="-2.17945 -0.751065 8.47704" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5734" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_70" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="-1.42945 -1.25107 8.22704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5733" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_68" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="-1.67945 -1.25107 8.22704" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust.ps" Group="0" ID="5735" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_37" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-1.67945 -0.501065 8.97704" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.525 0.675 0.65 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5737" Name="PointLight_25" Radius="3" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="-1.67945 -0.251065 9.22704" />
+                <ParticleSystem Active="true" Color="0.7 0.75 0.85 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="5736" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="2" MinFadeDistanceStart="6" Name="ParticleSystem_38" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-1.67945 -0.251065 9.22704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5728" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_63" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="-1.92945 -1.00107 8.47704" />
+                <SpotLight Active="true" Aspect="1.2" CastShadows="true" DiffuseColor="0.7 0.8 0.75 0.7" FOV="0.872665" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="lights/gobo_castlebase_window.dds" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5732" Name="SpotLight_16" NearClipPlane="0.1" Radius="5" Rotation="0.785398 0 3.14159" Scale="1 1 1" ShadowResolution="Medium" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" Tag="" WorldPos="-1.92945 -0.751065 8.72704" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.35 5.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5759" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_89" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="14.0705 -0.501065 8.22704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5727" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_61" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="-2.17945 -1.00107 8.47704" />
+                <Billboard Active="true" BillboardColor="0.4 0.45 0.4 1" BillboardOffset="0" BillboardSize="2.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="2266" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_13" Rotation="0 0 0" Tag="" WorldPos="6.24139 -0.217257 9.83884" />
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5760" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_90" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="13.8205 -0.501065 8.47704" />
+                <Billboard Active="true" BillboardColor="0.25 0.35 0.45 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5761" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_91" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="14.0705 -0.751065 8.22704" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_area_fog_large.ps" Group="0" ID="1893" MaxFadeDistanceEnd="50" MaxFadeDistanceStart="40" MinFadeDistanceEnd="3" MinFadeDistanceStart="10" Name="ParticleSystem_1" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-14.4295 -3.25107 1.47704" />
+                <Billboard Active="true" BillboardColor="0.15 0.25 0.35 1" BillboardOffset="0" BillboardSize="0.35 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5730" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_65" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="-2.17945 -1.25107 8.47704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5763" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_93" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="13.5705 -0.751065 8.47704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5762" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_92" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="13.8205 -0.751065 8.47704" />
+                <Billboard Active="true" BillboardColor="0.2 0.3 0.4 1" BillboardOffset="0" BillboardSize="0.5 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5765" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_95" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="14.0705 -1.00107 8.22704" />
+                <Billboard Active="true" BillboardColor="0.4 0.45 0.4 1" BillboardOffset="0" BillboardSize="2.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5738" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_72" Rotation="0 0 0" Tag="" WorldPos="-1.67945 -0.251065 9.72704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5764" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_94" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="14.3205 -1.00107 8.22704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5771" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_97" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="13.5705 -1.00107 8.47704" />
+                <Billboard Active="true" BillboardColor="0.2 0.25 0.2 1" BillboardOffset="0" BillboardSize="2.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5022" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_50" Rotation="0 0 0" Tag="" WorldPos="-1.70573 -0.217257 9.90154" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5766" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_96" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="13.8205 -1.00107 8.47704" />
+                <Billboard Active="true" BillboardColor="0.1 0.2 0.3 1" BillboardOffset="0" BillboardSize="0.4 4" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5773" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_99" Rotation="1.22755 0.152727 0.030165" Tag="" WorldPos="14.0705 -1.25107 8.22704" />
+                <SpotLight Active="true" Aspect="1.2" CastShadows="true" DiffuseColor="0.7 0.8 0.75 0.7" FOV="0.872665" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="lights/gobo_castlebase_window.dds" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5768" Name="SpotLight_17" NearClipPlane="0.1" Radius="5" Rotation="0.785398 0 3.14159" Scale="1 1 1" ShadowResolution="Medium" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" SpotFalloffMap="" Tag="" WorldPos="14.0705 -0.751065 8.72704" />
+                <Billboard Active="true" BillboardColor="0.3 0.4 0.5 1" BillboardOffset="0" BillboardSize="0.4 5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5772" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_98" Rotation="1.49603 -0.339094 -1.48631" Tag="" WorldPos="14.3205 -1.25107 8.22704" />
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="true" File="ps_light_dust.ps" Group="0" ID="5767" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="0" MinFadeDistanceStart="0" Name="ParticleSystem_39" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="14.3205 -0.501065 8.97704" />
+                <ParticleSystem Active="true" Color="0.7 0.75 0.85 1" FadeAtDistance="true" File="ps_area_fog_falling.ps" Group="0" ID="5769" MaxFadeDistanceEnd="40" MaxFadeDistanceStart="30" MinFadeDistanceEnd="2" MinFadeDistanceStart="6" Name="ParticleSystem_26" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="14.3205 -0.251065 9.22704" />
+                <PointLight Active="true" CastShadows="false" DiffuseColor="0.525 0.675 0.65 0" FalloffMap="" FlickerActive="false" FlickerFade="false" FlickerOffColor="0 0 0 1" FlickerOffFadeMaxLength="0" FlickerOffFadeMinLength="0" FlickerOffMaxLength="0" FlickerOffMinLength="0" FlickerOffPS="" FlickerOffRadius="0" FlickerOffSound="" FlickerOnFadeMaxLength="0" FlickerOnFadeMinLength="0" FlickerOnMaxLength="0" FlickerOnMinLength="0" FlickerOnPS="" FlickerOnSound="" Gobo="" GoboAnimFrameTime="0" GoboAnimMode="None" Group="0" ID="5770" Name="PointLight_26" Radius="3" Rotation="0 0 0" Scale="1 1 1" ShadowResolution="High" ShadowsAffectDynamic="true" ShadowsAffectStatic="true" Tag="" WorldPos="14.3205 -0.251065 9.22704" />
+                <Billboard Active="true" BillboardColor="0.15 0.25 0.35 1" BillboardOffset="0" BillboardSize="0.35 4.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5774" IsHalo="false" MaterialFile="billboards/bb_yellow_lightray.mat" Name="Billboard_100" Rotation="1.40877 -0.339094 -1.48631" Tag="" WorldPos="13.5705 -1.25107 8.47704" />
+                <Sound Active="true" Group="0" ID="2104" MaxDistance="5" MinDistance="1" Name="amb" Rotation="0 0 0" Scale="1 1 1" SoundEntityFile="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../ambience_wind_eerie_no3d.snt" Tag="" UseDefault="true" Volume="1" WorldPos="-24.3205 -0.862321 -3.07956" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4948" Mesh="" Name="AreaTriggerLastWind" Rotation="3.14159 -1.51041 3.14159" Scale="11.637 4.5 0.25" Tag="" WorldPos="8.66255 -0.751065 10.0367">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <Billboard Active="true" BillboardColor="0.4 0.45 0.4 1" BillboardOffset="0" BillboardSize="2.5 2.5" BillboardType="FixedAxis" ConnectLight="" Group="0" HaloSourceSize="0 0 0" ID="5775" IsHalo="false" MaterialFile="bb_lightblue_lightray.mat" Name="Billboard_14" Rotation="0 0 0" Tag="" WorldPos="14.0705 -0.251065 9.72704" />
+                <Area Active="true" AreaType="Script" Group="0" ID="4949" Mesh="" Name="AreaWindLast" Rotation="-3.14159 -0.945092 -3.14159" Scale="1 1 1" Tag="" WorldPos="11.607 -2.34883 8.45674">
+                    <UserVariables>
+                        <Var Name="PlayerLookAtCallback" Value="" />
+                        <Var Name="PlayerLookAtCallbackAutoRemove" Value="true" />
+                        <Var Name="PlayerInteractCallback" Value="" />
+                        <Var Name="PlayerInteractCallbackAutoRemove" Value="false" />
+                        <Var Name="ItemInteraction" Value="false" />
+                        <Var Name="MaxFocusDistance" Value="-1" />
+                    </UserVariables>
+                </Area>
+                <ParticleSystem Active="true" Color="1 1 1 1" FadeAtDistance="false" File="ps_scare_dust.ps" Group="0" ID="2114" MaxFadeDistanceEnd="110" MaxFadeDistanceStart="100" MinFadeDistanceEnd="1" MinFadeDistanceStart="2" Name="ParticleSystem_8" Rotation="0 0 0" Scale="1 1 1" Tag="" WorldPos="-3.77233 -2.68307 8.00134" />
+                <Sound Active="true" Group="0" ID="4992" MaxDistance="23" MinDistance="10" Name="amb_2" Rotation="0 0 0" Scale="1 1 1" SoundEntityFile="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../sounds/general/general_rain_m.snt" Tag="" UseDefault="false" Volume="1" WorldPos="5.84396 -0.862321 16.8338" />
+            </Entities>
+            <Misc />
+            <StaticObjectCombos />
+        </MapContents>
+    </MapData>
+</Level>
