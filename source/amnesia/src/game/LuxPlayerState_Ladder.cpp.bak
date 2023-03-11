@@ -90,11 +90,6 @@ void cLuxPlayerState_Ladder::OnEnterState(eLuxPlayerState aPrevState)
 	// Holster lantern
 	mbLanternDrawn = mpPlayer->GetHelperLantern()->IsActive();
 	mpPlayer->GetHelperLantern()->SetActive(false,true,true, false);
-	
-	/////////////////////////////////////
-	// Holster melee
-	mbMeleeDrawn = mpPlayer->GetHelperMelee()->IsActive();
-	mpPlayer->GetHelperMelee()->SetActive(false,true,true, false);
 
 	///////////////////////////////////////
 	// Set up variables

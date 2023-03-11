@@ -146,7 +146,6 @@ private:
 	float mfLeaveAtTopCount;
 
 	bool mbLanternDrawn;
-	bool mbMeleeDrawn;
 };
 
 //----------------------------------------------

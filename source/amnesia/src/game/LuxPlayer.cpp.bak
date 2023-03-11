@@ -744,9 +744,9 @@ void cLuxPlayer::DoAction(eLuxPlayerAction aAction, bool abPressed)
 			mpLantern->SetActive(!mpLantern->IsActive(), true);
 		}
 		
-		if(aAction== eLuxPlayerAction_Melee && abPressed)
+		if(aAction== eLuxPlayerAction_Ranged && abPressed)
 		{
-			mpMelee->SetActive(!mpMelee->IsActive(), true);
+			mpRanged->SetActive(!mpRanged->IsActive(), true);
 		}
 	}
 }

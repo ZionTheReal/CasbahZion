@@ -117,7 +117,6 @@ public:
 
 	virtual bool AllowPlayerMenus(){ return true;}
 	virtual bool AllowLantern(){ return true;}
-	virtual bool AllowMelee(){ return true;}
 	
 	virtual void RenderSolid(cRendererCallbackFunctions* apFunctions){}
 	virtual void RenderTrans(cRendererCallbackFunctions* apFunctions){}

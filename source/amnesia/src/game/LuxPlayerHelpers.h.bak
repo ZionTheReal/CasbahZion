@@ -429,35 +429,6 @@ private:
 
 //----------------------------------------------
 
-class cLuxPlayerMelee : public iLuxPlayerHelper
-{
-public:	
-	cLuxPlayerMelee(cLuxPlayer *apPlayer);
-	~cLuxPlayerMelee();
-
-	void OnStart();
-	void Update(float afTimeStep);
-	void Reset();
-
-	void OnMapEnter(cLuxMap *apMap);
-	void OnMapLeave(cLuxMap *apMap);
-
-	void CreateWorldEntities(cLuxMap *apMap);
-	void DestroyWorldEntities(cLuxMap *apMap);
-
-	void SetActive(bool abX, bool abUseEffects, bool abCheckForItem=true, bool abCheckIfAllowed=true);
-	bool IsActive(){ return mbActive;}
-
-	void SetDisabled(bool abX);
-	bool GetDisabled(){ return mbDisabled;}
-
-private:
-	bool mbDisabled;
-	bool mbActive;
-};
-
-//----------------------------------------------
-
 class cLuxPlayerDeath : public iLuxPlayerHelper
 {
 public:
