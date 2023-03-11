@@ -88,7 +88,6 @@ cLuxInventory::cLuxInventory() : iLuxUpdateable("LuxInventory")
 	mvItemTypes[eLuxItemType_Diary] = hplNew( cLuxItemType_Diary, ());
 	mvItemTypes[eLuxItemType_Coins] = hplNew( cLuxItemType_Coins, ());
 	mvItemTypes[eLuxItemType_Lantern] = hplNew( cLuxItemType_Lantern, ());
-	mvItemTypes[eLuxItemType_Melee] = hplNew( cLuxItemType_Melee, ());
 	mvItemTypes[eLuxItemType_Health] = hplNew( cLuxItemType_Health, ());
 	mvItemTypes[eLuxItemType_Sanity] = hplNew( cLuxItemType_Sanity, ());
 	mvItemTypes[eLuxItemType_LampOil] = hplNew( cLuxItemType_LampOil, ());

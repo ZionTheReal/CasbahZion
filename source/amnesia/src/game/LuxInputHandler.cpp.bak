@@ -212,7 +212,6 @@ static cLuxInput gvLuxInputs[] =
 	cLuxInput("Keyboard", eKey_R, eLuxAction_Rotate),
 	cLuxInput("Keyboard", eKey_H, eLuxAction_Holster),
 	cLuxInput("Keyboard", eKey_F, eLuxAction_Lantern),
-	cLuxInput("Keyboard", eKey_K, eLuxAction_Melee),
 	
 	cLuxInput("Keyboard", eKey_LeftShift, eLuxAction_Run),
 	cLuxInput("Keyboard", eKey_LeftCtrl, eLuxAction_Crouch),

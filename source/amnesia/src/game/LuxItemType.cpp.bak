@@ -280,47 +280,6 @@ tWString cLuxItemType_Lantern::GetDisplayedNameAdd(cLuxInventory_Item *apItem)
 //-----------------------------------------------------------------------
 
 //////////////////////////////////////////////////////////////////////////
-// MELEE
-//////////////////////////////////////////////////////////////////////////
-
-//-----------------------------------------------------------------------
-
-cLuxItemType_Melee::cLuxItemType_Melee() : iLuxItemType("Melee", eLuxItemType_Melee)
-{
-
-}
-
-//-----------------------------------------------------------------------
-
-bool cLuxItemType_Melee::BeforeAddItem(cLuxInventory_Item *apItem)
-{
-	ProgLog(eLuxProgressLogLevel_Medium, "Picked up melee");
-
-	gpBase->mpHintHandler->Add("PickMelee", kTranslate("Hints", "PickMelee"), 0);
-
-	return false;
-}
-
-//-----------------------------------------------------------------------
-
-void cLuxItemType_Melee::OnUse(cLuxInventory_Item *apItem, int alSlotIndex)
-{
-	cLuxPlayerMelee *pMelee = gpBase->mpPlayer->GetHelperMelee();
-	pMelee->SetActive(!pMelee->IsActive(), true);
-}
-
-//-----------------------------------------------------------------------
-
-tWString cLuxItemType_Melee::GetDisplayedNameAdd(cLuxInventory_Item *apItem)
-{
-	cLuxPlayerMelee *pMelee = gpBase->mpPlayer->GetHelperMelee();
-	tWString sStr = pMelee->IsActive() ? kTranslate("Inventory", "MeleeOn") : kTranslate("Inventory", "MeleeOff");
-	return _W(" (") +sStr + _W(")");
-}
-
-//-----------------------------------------------------------------------
-
-//////////////////////////////////////////////////////////////////////////
 // HEALTH
 //////////////////////////////////////////////////////////////////////////
 

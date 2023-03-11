@@ -330,6 +330,7 @@ void cLuxEffectRenderer::RenderOutline(cRendererCallbackFunctions* apFunctions)
 		{
 			lstObjects.push_back(pObject);
 		}
+		else continue;
 	}
 
 	////////////////////////////////////

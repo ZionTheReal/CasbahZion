@@ -316,7 +316,7 @@ private:
 	bool OilOnMouseUp(iWidget* apWidget, const cGuiMessageData& aData);
 	kGuiCallbackDeclarationEnd(OilOnMouseUp);
 	
-	/*// Equip Slot ZION: Made this, not part of the original code. Just in case I need to come back here.
+	/*// Equip Slot
 	bool EquipSlotOnDraw(iWidget* apWidget, const cGuiMessageData& aData);
 	kGuiCallbackDeclarationEnd(EquipSlotOnDraw);
 	
