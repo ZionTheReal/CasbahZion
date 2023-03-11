@@ -199,7 +199,6 @@ enum eLuxItemType
 	eLuxItemType_Note,
 	eLuxItemType_Diary,
 	eLuxItemType_Lantern,
-	eLuxItemType_Melee,
 	eLuxItemType_Health,
 	eLuxItemType_Sanity,
 	eLuxItemType_LampOil,
@@ -418,7 +417,6 @@ enum eLuxAction
 	eLuxAction_Rotate,
 	eLuxAction_Holster,
 	eLuxAction_Lantern,
-	eLuxAction_Melee,
 	
 	eLuxAction_Run,
 	eLuxAction_Jump,
@@ -449,7 +447,6 @@ enum eLuxPlayerAction
 	eLuxPlayerAction_Ignite,
 	eLuxPlayerAction_Holster,
 	eLuxPlayerAction_Lantern,
-	eLuxPlayerAction_Melee,
 
 	eLuxPlayerAction_LastEnum
 };
